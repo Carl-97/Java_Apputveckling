@@ -54,14 +54,14 @@ body{
 
 .menu-course{
 
-    text-align: left;
+    text-align: start;
     font-weight: 250;
     font-style: inherit;
     font-family: Serif;
 
 }
 .week-menu{
-    text-align: right;
+    text-align: center;
     font-weight: inherit;
     font-style: italic;
 }
