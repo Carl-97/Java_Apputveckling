@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 <html lang="sv">
-<link rel="stylesheet" href="css/main.css"/>
+<link rel="stylesheet" href="src/main/resources/css/index.css"/>
 
 <head>
   <title>Antons Skafferi</title>
@@ -43,7 +43,7 @@
     </div>
 
     <img
-      src = "img/lunch.jpg"
+      src = "src/main/resources/images/lunch.jpg"
       class="card-image"
       id = "menu-image"
       alt=""
@@ -52,7 +52,7 @@
 </main>
 <main class ="wrapper1">
   <img
-    src = "img/event.jpg"
+    src = "src/main/resources/images/event.jpg"
     class="event-image"
     id = "event-image"
     alt=""
@@ -87,7 +87,7 @@
 <main class="wrapper1">
   <figure>
     <img
-      src = "img/lacarte.jpg"
+      src = "src/main/resources/images/lacarte.jpg"
       class="lacarte-image"
       id = "lacarte-image"
       alt=""
