@@ -1,5 +1,4 @@
 
-
 body{
   margin: 0;
   padding: 0;
@@ -29,7 +28,13 @@ header img {
   color: black;
 
 }
-
+.table-booking{
+  text-align: right;
+  position: absolute;
+  font-size: 18px;
+  top: 1px;
+  right: 5px
+}
 .wrapper{
 
   background-color: #D3D3D3;
@@ -91,6 +96,10 @@ header img {
   font-size: 18px;
 
 }
+div:empty {
+  outline: 2px ;
+  height: 1em;
+}
 .menu-price {
   float: right;
   font-weight: inherit;
@@ -98,10 +107,12 @@ header img {
 }
 
 .week-menu{
-  text-align: center;
+  float: right;
+  margin-right: 15px;
   font-weight: inherit;
   font-style: italic;
-}
+  font-size: 18px;
+  }
 .card-image{
   margin: auto 0;
   height: 500px;
@@ -276,5 +287,8 @@ header img {
 .footer-container > * {
   margin: 1em;
 }
+
+
+
 
 
