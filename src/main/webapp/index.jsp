@@ -7,14 +7,15 @@
 <head>
   <title>Antons Skafferi</title>
 </head>
-<body>
 <header>
   <div class = "header-tittle-container">
     <div class="header-tittle">
-      <h1> ANTONS SKAFFARI</h1>
+
+      <img src="AntonsSkafferi.svg" alt="Antons Skafferi logo">
     </div>
   </div>
 </header>
+<body>
 
 <main class ="wrapper">
   <section class ="menu-container">
