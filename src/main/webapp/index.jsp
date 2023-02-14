@@ -1,17 +1,20 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 
+
 <html lang="sv">
-<link rel="stylesheet" href="src/main/resources/css/index.css"/>
+<link rel="stylesheet" href="css/main.css"/>
 
 <head>
   <title>Antons Skafferi</title>
 </head>
+
 <header>
   <div class = "header-tittle-container">
     <div class="header-tittle">
-
+       <a href="url"class="table-booking">Boka Bord</a>
       <img src="AntonsSkafferi.svg" alt="Antons Skafferi logo">
+
     </div>
   </div>
 </header>
@@ -29,22 +32,27 @@
         <p class ="menu-day">Man:</p>
         <li class ="menu-course">Fisk- och skaldjursgryta med saffran &
           pressad potatis <span class="menu-price">99 SEK</span></li>
+        <div></div>
 
         <li class = "menu-course">Schnitzel av kycklingfile med currydressing
           & valfri potatis <span class="menu-price">99 SEK</span></li>
+        <div></div>
 
         <li class ="menu-course"> Bakad Rotselleri, Stuvad Gronkal, Picklad
           Rodlok <span class="menu-price">99 SEK</span> </li>
+        <div></div>
+
+
 
 
       </div>
-
-      <p class= "week-menu">Se hela veckans meny</p>
+      <div></div>
+      <a href="weekMenu.html" class= "week-menu">Se hela veckans meny</a>
 
     </div>
 
     <img
-      src = "src/main/resources/images/lunch.jpg"
+      src = "img/lunch.jpg"
       class="card-image"
       id = "menu-image"
       alt=""
@@ -53,7 +61,7 @@
 </main>
 <main class ="wrapper1">
   <img
-    src = "src/main/resources/images/event.jpg"
+    src = "img/event.jpg"
     class="event-image"
     id = "event-image"
     alt=""
@@ -88,7 +96,7 @@
 <main class="wrapper1">
   <figure>
     <img
-      src = "src/main/resources/images/lacarte.jpg"
+      src = "img/lacarte.jpg"
       class="lacarte-image"
       id = "lacarte-image"
       alt=""
