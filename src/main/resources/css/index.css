@@ -18,12 +18,16 @@ body{
   padding-bottom: 10px;
   box-shadow: 5px 8px 10px hsla(0,0%,0%, 0.08);
 }
+header img {
+  display: block;
+  margin: 0 auto;
+}
 .header-tittle-container{
-  margin: 1% 15%;
+  margin: 0 auto;
 }
 .header-tittle{
   color: black;
-  padding-top: 80px;
+
 }
 
 .wrapper{
