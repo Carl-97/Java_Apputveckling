@@ -53,7 +53,7 @@
     </div>
 
     <img
-      src = "images/lunch.jpg"
+      src = "src/main/resources/images/lunch.jpg"
       class="card-image"
       id = "menu-image"
       alt=""
@@ -97,7 +97,7 @@
 <main class="wrapper1">
   <figure>
     <img
-      src = "img/lacarte.jpg"
+      src = "src/main/resources/images/lacarte.jpg"
       class="lacarte-image"
       id = "lacarte-image"
       alt=""
