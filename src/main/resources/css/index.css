@@ -1,4 +1,5 @@
 
+
 body{
   margin: 0;
   padding: 0;
@@ -9,11 +10,12 @@ body{
 }
 
 
-.header{
+header{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  margin-top: -50px;
+  margin-top: 10px;
+  display: block;
   padding-bottom: 10px;
   box-shadow: 5px 8px 10px hsla(0,0%,0%, 0.08);
 }
@@ -21,13 +23,8 @@ header img {
   display: block;
   margin: 0 auto;
 }
-.header-tittle-container{
-  margin: 0 auto;
-}
-.header-tittle{
-  color: black;
 
-}
+
 .table-booking{
   text-align: right;
   position: absolute;
