@@ -1,0 +1,45 @@
+* {
+    font-family: Imprint MT Shadow, serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+    box-shadow: 5px 8px 10px hsla(0, 0%, 0%, 0.08);
+}
+
+h2 {
+    font-size: 38px;
+}
+
+#something {
+    margin-top: 50px;
+    padding: 2% 1%;
+    background-color: white;
+}
+
+#dinner{
+    background-color: white;
+}
+
+ul ol {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    font-size: 22px;
+    border-bottom: 1px dotted;
+}
+span {
+    margin-top: 16px
+}
