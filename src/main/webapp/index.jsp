@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 
 
+
 <html lang="sv">
 <link rel="stylesheet" href="src/main/resources/css/index.css"/>
 
@@ -10,13 +11,13 @@
 </head>
 
 <header>
-  <div class = "header-tittle-container">
-    <div class="header-tittle">
+  <div class = "header">
+
        <a href="url"class="table-booking">Boka Bord</a>
       <img src="AntonsSkafferi.svg" alt="Antons Skafferi logo">
 
-    </div>
   </div>
+
 </header>
 <body>
 
