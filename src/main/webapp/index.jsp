@@ -5,7 +5,8 @@
 
 <html lang="en">
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/main/resources/css/index.css"/>
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}src/main/resources/css/index.css"/>
 
 <head>
   <title>Antons Skafferi</title>
@@ -14,7 +15,8 @@
 <header>
   <div class = "header">
 
-       <a href="url"class="table-booking">Boka Bord</a>
+
+    <a href="url"class="table-booking">Boka Bord</a>
       <img src="AntonsSkafferi.svg" alt="Antons Skafferi logo">
 
   </div>
@@ -49,12 +51,12 @@
 
       </div>
       <div></div>
-      <a href="weekMenu.html" class= "week-menu">Se hela veckans meny</a>
+      <a href="weekMenu.jsp"  class= "week-menu">Se hela veckans meny... </a>
 
     </div>
 
     <img
-      src = "src/main/resources/images/lunch.jpg"
+      src = "${pageContext.request.contextPath}src/main/resources/images/lunch.jpg"
       class="card-image"
       id = "menu-image"
       alt=""
@@ -63,7 +65,7 @@
 </main>
 <main class ="wrapper1">
   <img
-    src = "src/main/resources/images/event.jpg"
+    src = "${pageContext.request.contextPath}resources/images/event.jpg"
     class="event-image"
     id = "event-image"
     alt=""
@@ -98,12 +100,13 @@
 <main class="wrapper1">
   <figure>
     <img
-      src = "src/main/resources/images/lacarte.jpg"
+      src = "${pageContext.request.contextPath}resources/images/lacarte.jpg"
       class="lacarte-image"
       id = "lacarte-image"
       alt=""
     />
-    <figcaption class="lacarte-menu"> la Carte Meny </figcaption>
+    <a href="ALaCarte.jsp" class="lacarte-menu">la Carte Meny</a>
+
   </figure>
 
 
