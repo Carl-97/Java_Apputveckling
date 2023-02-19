@@ -105,7 +105,7 @@
       id = "lacarte-image"
       alt=""
     />
-    <a href="ALaCarte.jsp" class="lacarte-menu">la Carte Meny</a>
+    <a href="ALaCarte.jsp"> <figcaption class="lacarte-menu"> la Carte Meny </figcaption></a>
 
   </figure>
 
