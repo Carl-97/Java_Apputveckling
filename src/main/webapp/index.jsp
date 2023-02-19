@@ -4,10 +4,6 @@
 
 
 <html lang="en">
-xmlns="http://www.w3.org/1999/xhtml"
-xmlns:h="http://java.sun.com/jsf/html"
-xmlns:ui="http://java.sun.com/jsf/facelets"
-xmlns:c="http://java.sun.com/jsf/core">
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/main/resources/css/index.css"/>
 
