@@ -2,11 +2,13 @@
 <!DOCTYPE html>
 
 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-<html lang="en">
 
-
-<link rel="stylesheet" href="src/main/resources/css/index.css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}src/main/resources/css/index.css"/>
 
 <head>
   <title>Antons Skafferi</title>
