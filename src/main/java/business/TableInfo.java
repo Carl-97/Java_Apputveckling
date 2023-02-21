@@ -12,7 +12,7 @@ import jakarta.persistence.TypedQuery;
 public class TableInfo
 {
     @PersistenceContext(name = "default")
-    EntityManager em;
+    private EntityManager em;
 
     public String getName(){
         return "Hello";

@@ -12,12 +12,19 @@ import java.util.List;
 @Named
 @RequestScoped
 public class LunchInfo {
-    @PersistenceContext
+    @PersistenceContext(name = "default")
     private EntityManager em;
 
+    public String getName() {
+        return "LunchInfo";
+    }
     public List<Dagenslunch> getTodaysLunch() {
-        //TypedQuery<Dagenslunch> query = em.createQuery("", Dagenslunch.class).getResultList();
+        //TypedQuery<Dagenslunch> query = em.createQuery("SELECT e FROM Dagenslunch e", Dagenslunch.class);
+        return em.createQuery("SELECT e FROM Dagenslunch e WHERE e.date = CURRENT_DATE", Dagenslunch.class).getResultList();
+    }
 
-        return em.createQuery("SELECT e FROM Dagenslunch e", Dagenslunch.class).getResultList();
+    public Integer getNLunch(){
+        TypedQuery<Dagenslunch> query = em.createQuery("SELECT e FROM Dagenslunch e", Dagenslunch.class);
+        return query.getResultList().size();
     }
 }

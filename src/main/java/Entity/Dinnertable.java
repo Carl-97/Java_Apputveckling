@@ -6,10 +6,6 @@ import java.util.Objects;
 
 @Entity
 //@Table(name = "DINNERTABLE", schema = "APP", catalog = "")
-@NamedQuery(
-        name = "",
-        query = ""
-)
 public class Dinnertable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
