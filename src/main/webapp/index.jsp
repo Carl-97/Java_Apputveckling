@@ -1,11 +1,12 @@
+<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="h" uri="http://xmlns.jcp.org/jsf/html" %>
+<%@ taglib prefix="f" uri="http://xmlns.jcp.org/jsf/core" %>
+<%@ taglib prefix="ui" uri="http://xmlns.jcp.org/jsf/facelets" %>
 
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}src/main/resources/css/index.css"/>
