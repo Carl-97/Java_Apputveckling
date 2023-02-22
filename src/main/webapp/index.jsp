@@ -1,26 +1,21 @@
-
 <!DOCTYPE html>
-
 
 
 <html lang="en">
 
-
-<link rel="stylesheet" href="src/main/resources/css/index.css"/>
-
 <head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Antons Skafferi</title>
+  <link rel="stylesheet" href="css/index.css" type="text/css"/>
 </head>
 
 <header>
   <div class = "header">
-
-
     <a href="url" class="table-booking">Boka Bord</a>
-      <img src="AntonsSkafferi.svg" alt="Antons Skafferi logo"/>
-
+    <img src="AntonsSkafferi.svg" alt="Antons Skafferi logo"/>
   </div>
-
 </header>
 <body>
 
@@ -33,9 +28,9 @@
         <p class ="header-open-hours-lunch">Man-Fre: 11:00 - 14:00</p>
       </div>
       <div class = "menu-items">
-        <p class ="menu-day">Man:</p>
+        <p class ="menu-day">Måndag:</p>
         <li class ="menu-course">Fisk- och skaldjursgryta med saffran
-          pressad potatis  <span class="menu-price">99 SEK</span></li>
+          pressad potatis <span class="menu-price">99 SEK</span></li>
         <div></div>
 
         <li class = "menu-course">Schnitzel av kycklingfile med currydressing
@@ -46,17 +41,14 @@
           Rodlok <span class="menu-price">99 SEK</span> </li>
         <div></div>
 
-
-
-
       </div>
       <div></div>
-      <a href="weekMenu.xhtml" class= "week-menu">Se hela veckans meny... </a>
+      <a href = "weekMenu.xhtml" class= "week-menu">Se hela veckans meny... </a>
 
     </div>
 
     <img
-      src = "${pageContext.request.contextPath}src/main/resources/images/lunch.jpg"
+      src = "images/lunch.jpg"
       class="card-image"
       id = "menu-image"
       alt=""
@@ -65,7 +57,7 @@
 </main>
 <main class ="wrapper1">
   <img
-    src = "${pageContext.request.contextPath}resources/images/event.jpg"
+    src = "images/event.jpg"
     class="event-image"
     id = "event-image"
     alt=""
@@ -87,20 +79,14 @@
           musiken och avslutas vid 22.00. Passa
           pa att redan nu boka bord innan det blir
           fullt.</p>
-
-
       </div>
-
-      <p class= "other-event">Se alla kommande evenemang</p>
-
     </div>
-
   </section>
 </main>
 <main class="wrapper1">
   <figure>
     <img
-      src = "${pageContext.request.contextPath}resources/images/lacarte.jpg"
+      src = "images/lacarte.jpg"
       class="lacarte-image"
       id = "lacarte-image"
       alt=""
