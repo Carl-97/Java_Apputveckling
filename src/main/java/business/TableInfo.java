@@ -15,7 +15,7 @@ public class TableInfo
     private EntityManager em;
 
     public String getName(){
-        return "Hello";
+        return "Tables";
     }
     public Integer getNTables(){
         TypedQuery<Dinnertable> query = em.createQuery("SELECT d FROM Dinnertable d", Dinnertable.class);

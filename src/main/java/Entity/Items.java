@@ -5,6 +5,10 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
+@NamedQuery(
+        name = "allItems",
+        query = "SELECT e FROM Items e"
+)
 public class Items {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -14,7 +18,7 @@ public class Items {
     @Column(name = "NAME")
     private String name;
     @Basic
-    @Column(name = "desc")
+    @Column(name = "DESCRIPTION")
     private String desc;
     @Basic
     @Column(name = "PRICE")
@@ -74,5 +78,15 @@ public class Items {
     @Override
     public int hashCode() {
         return Objects.hash(itemId, name, desc, price, itemCategory);
+    }
+
+    @Override
+    public String toString() {
+        return "Items{" +
+                "name='" + name + '\'' +
+                ", desc='" + desc + '\'' +
+                ", price=" + price +
+                ", itemCategory=" + itemCategory +
+                '}';
     }
 }

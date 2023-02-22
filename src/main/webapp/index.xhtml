@@ -6,17 +6,18 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="#{now}">
-        <f:convertDateTime pattern="MM/dd/yyyy" type="date"/>
+    <h:outputLabel value="Antons's Skafferi">
     </h:outputLabel>
     <br/>
-    #{tableInfo.name}
-    #{tableInfo.NTables}
     <br/>
-    <ui:repeat value="#{lunchInfo.todaysLunch}" var="value">
-        #{value.name}<br/>
-        #{value.desc}<br/>
-        #{value.price}<br/>
+    <ui:repeat value="#{lunchInfo.todaysLunch}" var="lunch">
+        #{lunch.name}<br/>
+        #{lunch.desc}<br/>
+        #{lunch.price}<br/>
+    </ui:repeat>
+    <br/><br/>
+    <ui:repeat value="#{menuInfo}" var="menu">
+        #{menu}<br/>
     </ui:repeat>
 </f:view>
 </html>

@@ -6,7 +6,11 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
-public class Dagenslunch {
+@NamedQuery(
+        name = "getTodayLunch",
+        query = "SELECT e FROM TodaysLunch e WHERE e.date = CURRENT_DATE"
+)
+public class TodaysLunch {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "LUNCH_ID")
@@ -20,9 +24,6 @@ public class Dagenslunch {
     @Basic
     @Column(name = "NAME")
     private String name;
-    @Basic
-    @Column(name = "PRICE")
-    private int price;
 
     public int getLunchId() {
         return lunchId;
@@ -56,18 +57,11 @@ public class Dagenslunch {
         this.name = name;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Dagenslunch that = (Dagenslunch) o;
+        TodaysLunch that = (TodaysLunch) o;
         return lunchId == that.lunchId && Objects.equals(desc, that.desc) && Objects.equals(date, that.date) && Objects.equals(name, that.name);
     }
 
@@ -79,7 +73,6 @@ public class Dagenslunch {
     @Override
     public String toString() {
         return name + "\n" +
-                desc + "\n" +
-                price + "\n";
+                desc + "\n";
     }
 }

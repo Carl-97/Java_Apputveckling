@@ -6,7 +6,7 @@
     <persistence-unit name="default">
 
         <class>Entity.Dinnertable</class>
-        <class>Entity.Dagenslunch</class>
+        <class>Entity.TodaysLunch</class>
         <class>Entity.Items</class>
         <class>Entity.Orders</class>
         <properties>
@@ -26,6 +26,9 @@
             <property name="eclipselink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
             <property name="eclipselink.jdbc.user" value="APP"/>
             <property name="eclipselink.jdbc.password" value="APP"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/sql/data.sql"/>
+            <property name="hibernate.hbm2ddl.import_files_sql_extractor" value="org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor" />
             <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>
