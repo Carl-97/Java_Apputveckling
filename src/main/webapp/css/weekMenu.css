@@ -1,0 +1,49 @@
+body{
+    background-color:  #f3f3f3;
+
+}
+
+.whitebox{
+    
+    background-color: white;
+    margin: auto;
+    width: 50%;
+    padding: 100px;
+    border-radius:  500px;
+    background-color: #f3f3f3;
+
+}
+
+.paragraphs{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+}
+
+.header{
+    margin: auto;
+}
+
+header img{
+    display: block;
+    margin: 0 auto;
+}
+
+.table-booking{
+    text-align: right;
+    position: absolute;
+    font-size: 18px;
+    top: 1px;
+    right: 5px
+}
+
+.backgroundimg{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1000px;
+    padding: 100px;
+    margin: auto;
+    border-radius: 5px;
+}
