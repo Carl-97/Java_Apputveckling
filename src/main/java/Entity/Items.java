@@ -25,7 +25,9 @@ public class Items {
     private int price;
     @Basic
     @Column(name = "itemCategory")
-    private Integer itemCategory;
+    private char itemCategory;
+
+    public Items() {}
 
     public int getItemId() {
         return itemId;
@@ -59,11 +61,11 @@ public class Items {
         this.price = price;
     }
 
-    public Integer getItemCategory() {
+    public char getItemCategory() {
         return itemCategory;
     }
 
-    public void setItemCategory(Integer itemCategory) {
+    public void setItemCategory(char itemCategory) {
         this.itemCategory = itemCategory;
     }
 
