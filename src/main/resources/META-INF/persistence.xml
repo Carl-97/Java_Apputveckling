@@ -5,5 +5,19 @@
              version="3.0">
     <persistence-unit name="default">
 
+        <class>Entity.Dinnertable</class>
+        <class>Entity.TodaysLunch</class>
+        <class>Entity.Items</class>
+        <class>Entity.Orders</class>
+        <class>Entity.Event</class>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:derby://localhost:1527/DEFAULT"/>
+            <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="hibernate.connection.username" value="APP"/>
+            <property name="hibernate.connection.password" value="APP"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/sql/data.sql"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
     </persistence-unit>
 </persistence>

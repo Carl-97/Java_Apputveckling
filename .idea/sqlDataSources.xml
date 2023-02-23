@@ -8,4 +8,22 @@
       </scope>
     </mapping>
   </component>
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="d55c75af-147d-47f5-a4fa-948c76d027da" />
+          <option name="name" value="DDL data source" />
+          <option name="dbmsName" value="DERBY" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$/src/main/resources/DDL" />
+              <option value="file://$PROJECT_DIR$/src/main/resources/DDL/APP/Dinnertable.sql" />
+            </array>
+          </option>
+          <option name="outLayout" value="File per object by schema.groovy" />
+        </State>
+      </list>
+    </option>
+  </component>
 </project>
