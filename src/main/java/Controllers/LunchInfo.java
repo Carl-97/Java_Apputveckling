@@ -1,4 +1,4 @@
-package business;
+package Controllers;
 
 import Entity.TodaysLunch;
 import jakarta.enterprise.context.RequestScoped;

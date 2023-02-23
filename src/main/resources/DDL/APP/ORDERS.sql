@@ -1,15 +1,10 @@
 create table ORDERS
 (
-    ORDERS_ID INTEGER not null
-        constraint "ORDERS_pk"
-            primary key,
-    TABLE_FK  INTEGER not null
-        constraint "ORDERS_DINNERTABLE_TABLE_ID_fk"
-            references DINNERTABLE,
-    QUANTITY  INTEGER not null,
-    PRICE     DOUBLE  not null,
-    ITEM_FK   INTEGER not null
-        constraint "ORDERS_ITEMS_ITEM_ID_fk"
-            references ITEMS
+    ORDERS_ID INTEGER default GENERATED_BY_DEFAULT generated always as identity
+        primary key,
+    ITEM_FK   INTEGER,
+    PRICE     DOUBLE,
+    QUANTITY  INTEGER,
+    TABLE_FK  INTEGER
 );
 

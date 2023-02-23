@@ -1,4 +1,4 @@
-package business;
+package Controllers;
 
 import Entity.Dinnertable;
 import jakarta.enterprise.context.RequestScoped;
