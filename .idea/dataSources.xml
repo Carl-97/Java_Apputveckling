@@ -8,5 +8,16 @@
       <jdbc-url>jdbc:derby://localhost:1527/DEFAULT</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="default/Hibernate" uuid="4fdbc59b-dd81-4898-9bee-25efb7deb0c5">
+      <driver-ref>derby.remote</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/khadd/Documents/GitHub/Java_Apputveckling/src/main/resources/META-INF/persistence.xml</remarks>
+      <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby://localhost:1527/DEFAULT</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
