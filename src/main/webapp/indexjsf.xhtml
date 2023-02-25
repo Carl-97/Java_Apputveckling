@@ -10,11 +10,10 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>Antons Skafferi</title>
-   <h:outputStylesheet library="css" name="index.css" />
 </h:head>
 
 <h:body>
-
+   <h:outputStylesheet library="css" name="index.css" />
    <h:form>
       <h:panelGroup layout="block" styleClass="header">
          <a href="reservation.xhtml" class="table-booking">Boka Bord</a>
@@ -41,7 +40,7 @@
    </h:form>
 
    <h:panelGroup layout="block" styleClass="wrapper1">
-      <h:graphicImage url="images/event.jpg" styleClass="event-image" id="event-image" alt="" />
+      <h:graphicImage name="images/event.jpg" styleClass="event-image" id="event-image" alt="" />
       <h:panelGroup layout="block" styleClass="event-container">
          <div class="event-card">
             <h1 class="event-tittle">Evenemang</h1>
@@ -64,7 +63,7 @@
    </h:panelGroup>
 
    <h:panelGroup layout="block" styleClass="wrapper1">
-      <h:graphicImage url="images/lacarte.jpg" styleClass="lacarte-image" id="lacarte-image" alt="" />
+      <h:graphicImage name="images/lacarte.jpg" styleClass="lacarte-image" id="lacarte-image" alt="" />
 
       <h:link outcome="ALaCarte">
          <h:panelGroup layout="block" styleClass="lacarte-menu">la Carte Meny
