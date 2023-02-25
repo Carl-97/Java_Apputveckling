@@ -6,6 +6,10 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
+@NamedQuery(
+        name = "getEventInfo",
+        query = "SELECT e FROM Event e ORDER BY e.date ASC"
+)
 public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

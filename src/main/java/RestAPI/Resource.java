@@ -1,4 +1,4 @@
-package restAPI;
+package RestAPI;
 
 import jakarta.ws.rs.*;
 
@@ -9,4 +9,5 @@ public class Resource {
     public String hello() {
         return "Hello, World!";
     }
+
 }

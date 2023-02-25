@@ -5,10 +5,10 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@NamedQuery(
-        name = "allItems",
-        query = "SELECT e FROM Items e"
-)
+@NamedQueries({
+        @NamedQuery(name = "allItems", query = "SELECT e FROM Items e"),
+        @NamedQuery(name = "Items.Category", query = "SELECT e FROM  Items e WHERE e.itemCategory = :itemCategory")
+})
 public class Items {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

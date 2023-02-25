@@ -18,5 +18,14 @@
     <ui:repeat value="#{menuInfo.allItems}" var="menu">
         #{menu}<br/>
     </ui:repeat>
+    <ui:repeat value="#{menuInfo.getItemByCategory('F')}" var="menu">
+        #{menu.name}<br/>
+    </ui:repeat>
+    <ui:repeat value="#{menuInfo.getItemByCategory('V')}" var="menu">
+        #{menu.name}<br/>
+    </ui:repeat>
+    <ui:repeat value="#{menuInfo.getItemByCategory('D')}" var="menu">
+        #{menu.name}<br/>
+    </ui:repeat>
 </f:view>
 </html>
