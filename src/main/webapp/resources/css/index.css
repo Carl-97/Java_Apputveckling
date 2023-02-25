@@ -10,7 +10,7 @@ body{
 }
 
 
-header{
+.header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -18,9 +18,11 @@ header{
   display: block;
   padding-bottom: 10px;
   box-shadow: 5px 8px 10px hsla(0,0%,0%, 0.08);
+  text-align: center;
 }
-header img {
-  display: block;
+
+.headerimg {
+  display: inline-block;
   margin: 0 auto;
 }
 
@@ -249,7 +251,7 @@ div:empty {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  width: 125%;
+  width: 75%;
   margin: 0 auto;
 
 }
@@ -282,7 +284,7 @@ div:empty {
 }
 
 .footer-container > * {
-  margin: 1em;
+  margin: 3em;
 }
 
 

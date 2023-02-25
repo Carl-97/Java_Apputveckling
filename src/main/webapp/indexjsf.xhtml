@@ -17,10 +17,13 @@
    <h:form>
       <h:panelGroup layout="block" styleClass="header">
          <a href="reservation.xhtml" class="table-booking">Boka Bord</a>
-         <h:graphicImage name="images/AntonsSkafferi.svg" alt="Antons Skafferi logo"/>
+         <h:graphicImage name="images/AntonsSkafferi.svg" alt="Antons Skafferi logo" styleClass="headerimg"/>
+
 
       </h:panelGroup>
       <h:panelGroup layout="block" styleClass="wrapper">
+      <h:panelGroup layout="block" styleClass="menu-container">
+      <h:panelGroup layout="block" styleClass="menu-card">
          <h1 class ="menu-tittle">Dagens Lunch</h1>
          <div class ="menu-week">
             <p class ="week-number">Vecka </p>
@@ -37,6 +40,11 @@
          </ul>
          <a href="weekMenu.xhtml" class="week-menu">Se hela veckans meny... </a>
       </h:panelGroup>
+         <h:graphicImage name="images/lunch.jpg" styleClass="card-image" id="lunch-image" alt="" />
+      </h:panelGroup>
+
+      </h:panelGroup>
+
    </h:form>
 
    <h:panelGroup layout="block" styleClass="wrapper1">
@@ -63,12 +71,35 @@
    </h:panelGroup>
 
    <h:panelGroup layout="block" styleClass="wrapper1">
+      <h:panelGrid>
       <h:graphicImage name="images/lacarte.jpg" styleClass="lacarte-image" id="lacarte-image" alt="" />
-
-      <h:link outcome="ALaCarte">
-         <h:panelGroup layout="block" styleClass="lacarte-menu">la Carte Meny
-         </h:panelGroup>
-      </h:link>
+      <h:panelGroup layout="block" styleClass="lacarte-menu">
+         <a href="ALaCarte.xhtml" >La Carte Meny </a>
+      </h:panelGroup></h:panelGrid>
    </h:panelGroup>
+
+   <h:panelGroup class="wrapper2">
+
+         <h:panelGroup layout="block" styleClass="footer-container">
+            <div class="contact-info">
+               <h3>Kontakt</h3>
+               <p>Telefon: 010 34 34 34</p>
+               <p>Email: Antonsskafferi@gmail.com</p>
+            </div>
+            <div class="address">
+               <h3>Adress</h3>
+               <p>Storgatan 12</p>
+               <p>855 33 Sunsvall</p>
+            </div>
+            <div class="hours">
+               <h3>Oppettider</h3>
+               <p>Man-tors: 11:00 - 21:00</p>
+               <p>Fre-lor: 11:00 - 00:00</p>
+               <p>Son: Stangt</p>
+            </div>
+         </h:panelGroup>
+
+   </h:panelGroup>
+
 </h:body>
 </html>
