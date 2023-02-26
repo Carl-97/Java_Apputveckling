@@ -58,6 +58,7 @@ body{
   height: 500px;
   border-radius: 10px;
 }
+
 .menu-tittle{
   text-align: center;
   font-weight: 500;
@@ -80,11 +81,14 @@ body{
   text-align: start;
   font-weight: 550;
   margin-left: 20px;
-  font-style: oblique;
+  font-style: italic;
   font-family: serif;
   font-size: 20px;
+  margin-bottom: 1em;
 }
-
+.menu-items{
+  margin-bottom: 1em;
+}
 
 .menu-course{
 
@@ -93,6 +97,7 @@ body{
   font-style: inherit;
   margin-left: 20px;
   font-size: 18px;
+  margin-bottom: 1em;
 
 }
 div:empty {

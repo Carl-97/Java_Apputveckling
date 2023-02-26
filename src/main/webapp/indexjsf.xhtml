@@ -22,26 +22,25 @@
 
       </h:panelGroup>
       <h:panelGroup layout="block" styleClass="wrapper">
-      <h:panelGroup layout="block" styleClass="menu-container">
-      <h:panelGroup layout="block" styleClass="menu-card">
-         <h1 class ="menu-tittle">Dagens Lunch</h1>
-         <div class ="menu-week">
-            <p class ="week-number">Vecka </p>
-            <p class ="header-open-hours-lunch">Man-Fre: 11:00 - 14:00</p>
-         </div>
-         <ul class="menu-items">
-            <li class ="menu-day">Måndag:</li>
-            <li class ="menu-course">Fisk- och skaldjursgryta med saffran
-               pressad potatis <span class="menu-price">99 SEK</span></li>
-            <li class = "menu-course">Schnitzel av kycklingfile med currydressing
-               valfri potatis <span class="menu-price">99 SEK</span></li>
-            <li class ="menu-course"> Bakad Rotselleri, Stuvad Gronkal, Picklad
-               Rodlok <span class="menu-price">99 SEK</span> </li>
-         </ul>
-         <a href="weekMenu.xhtml" class="week-menu">Se hela veckans meny... </a>
-      </h:panelGroup>
-         <h:graphicImage name="images/lunch.jpg" styleClass="card-image" id="lunch-image" alt="" />
-      </h:panelGroup>
+         <h:panelGroup layout="block" styleClass="menu-container">
+            <h:panelGroup layout="block" styleClass="menu-card">
+               <h1 class ="menu-tittle">Dagens Lunch</h1>
+               <div class ="menu-week">
+                  <p class ="week-number">Vecka #{lunchInfo.week}</p>
+                  <p class ="header-open-hours-lunch">Man-Fre: 11:00 - 14:00</p>
+               </div>
+               <ul class="menu-items">
+                  <h:panelGroup styleClass="menu-day">#{lunchInfo.currentDate}:</h:panelGroup>
+                  <ui:repeat value="#{lunchInfo.todaysLunch}" var="lunch">
+                     <li  Class="menu-course" > #{lunch.name}
+                        <span class="menu-price">#{lunch.price}</span>
+                     </li>
+                  </ui:repeat>
+               </ul>
+               <a href="weekMenu.xhtml" class="week-menu">Se hela veckans meny... </a>
+            </h:panelGroup>
+            <h:graphicImage name="images/lunch.jpg" styleClass="card-image" id="lunch-image" alt="" />
+         </h:panelGroup>
 
       </h:panelGroup>
 
@@ -72,32 +71,32 @@
 
    <h:panelGroup layout="block" styleClass="wrapper1">
       <h:panelGrid>
-      <h:graphicImage name="images/lacarte.jpg" styleClass="lacarte-image" id="lacarte-image" alt="" />
-      <h:panelGroup layout="block" styleClass="lacarte-menu">
-         <a href="ALaCarte.xhtml" >La Carte Meny </a>
-      </h:panelGroup></h:panelGrid>
+         <h:graphicImage name="images/lacarte.jpg" styleClass="lacarte-image" id="lacarte-image" alt="" />
+         <h:panelGroup layout="block" styleClass="lacarte-menu">
+            <a href="ALaCarte.xhtml" >La Carte Meny </a>
+         </h:panelGroup></h:panelGrid>
    </h:panelGroup>
 
    <h:panelGroup class="wrapper2">
 
-         <h:panelGroup layout="block" styleClass="footer-container">
-            <div class="contact-info">
-               <h3>Kontakt</h3>
-               <p>Telefon: 010 34 34 34</p>
-               <p>Email: Antonsskafferi@gmail.com</p>
-            </div>
-            <div class="address">
-               <h3>Adress</h3>
-               <p>Storgatan 12</p>
-               <p>855 33 Sunsvall</p>
-            </div>
-            <div class="hours">
-               <h3>Oppettider</h3>
-               <p>Man-tors: 11:00 - 21:00</p>
-               <p>Fre-lor: 11:00 - 00:00</p>
-               <p>Son: Stangt</p>
-            </div>
-         </h:panelGroup>
+      <h:panelGroup layout="block" styleClass="footer-container">
+         <div class="contact-info">
+            <h3>Kontakt</h3>
+            <p>Telefon: 010 34 34 34</p>
+            <p>Email: Antonsskafferi@gmail.com</p>
+         </div>
+         <div class="address">
+            <h3>Adress</h3>
+            <p>Storgatan 12</p>
+            <p>855 33 Sunsvall</p>
+         </div>
+         <div class="hours">
+            <h3>Oppettider</h3>
+            <p>Man-tors: 11:00 - 21:00</p>
+            <p>Fre-lor: 11:00 - 00:00</p>
+            <p>Son: Stangt</p>
+         </div>
+      </h:panelGroup>
 
    </h:panelGroup>
 

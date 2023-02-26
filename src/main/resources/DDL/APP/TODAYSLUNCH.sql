@@ -4,6 +4,7 @@ create table TODAYSLUNCH
         primary key,
     DATE        DATE,
     DESCRIPTION VARCHAR(255),
-    NAME        VARCHAR(255)
+    NAME         VARCHAR(255),
+    PRICE        INTEGER
 );
 

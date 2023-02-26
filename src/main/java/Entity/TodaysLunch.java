@@ -25,6 +25,9 @@ public class TodaysLunch {
     @Column(name = "NAME")
     private String name;
 
+    @Basic
+    @Column(name = "PRICE")
+    private String price;
     public int getLunchId() {
         return lunchId;
     }
@@ -57,17 +60,24 @@ public class TodaysLunch {
         this.name = name;
     }
 
+    public String getPrice() {
+        return price;
+    }
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TodaysLunch that = (TodaysLunch) o;
-        return lunchId == that.lunchId && Objects.equals(desc, that.desc) && Objects.equals(date, that.date) && Objects.equals(name, that.name);
+        return lunchId == that.lunchId && Objects.equals(desc, that.desc) && Objects.equals(date, that.date) && Objects.equals(name, that.name)&& Objects.equals(price, that.price);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lunchId, desc, date, name);
+        return Objects.hash(lunchId, desc, date, name,price);
     }
 
     @Override
@@ -75,4 +85,6 @@ public class TodaysLunch {
         return name + "\n" +
                 desc + "\n";
     }
+
+
 }
