@@ -5,6 +5,10 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Dinnertable.all", query = "SELECT e FROM Dinnertable e")
+}
+)
 public class Dinnertable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

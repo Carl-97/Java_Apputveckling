@@ -7,7 +7,8 @@ import java.util.Objects;
 @Entity
 @NamedQueries({
         @NamedQuery(name = "Orders.all", query = "SELECT e FROM Orders e"),
-        @NamedQuery(name = "Orders.byItems", query = "SELECT e FROM Orders e WHERE e.dinnertableByTableFk.tableId = ?1")
+        @NamedQuery(name = "Orders.byTableID", query = "SELECT e FROM Orders e WHERE e.dinnertableByTableFk.tableId = ?1"),
+        @NamedQuery(name = "Orders.ToKitchen", query = "select e.itemsByItemFk.name, e.note from Orders e where e.itemsByItemFk.itemcategory not like 'D'")
 })
 public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
