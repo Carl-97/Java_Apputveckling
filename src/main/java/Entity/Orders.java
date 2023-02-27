@@ -5,23 +5,41 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Orders.all", query = "SELECT e FROM Orders e"),
+        @NamedQuery(name = "Orders.byItems", query = "SELECT e FROM Orders e WHERE e.dinnertableByTableFk.tableId = ?1")
+})
 public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ORDERS_ID")
     private int ordersId;
     @Basic
-    @Column(name = "TABLE_FK")
-    private int tableFk;
+    @Column(name = "PRICE")
+    private Double price;
     @Basic
     @Column(name = "QUANTITY")
-    private int quantity;
+    private Integer quantity;
     @Basic
-    @Column(name = "PRICE")
-    private double price;
-    @Basic
-    @Column(name = "ITEM_FK")
-    private int itemFk;
+    @Column
+    private String note;
+
+    @ManyToOne
+    @JoinColumn(name = "ITEM_FK", referencedColumnName = "ITEM_ID")
+    private Items itemsByItemFk;
+    @ManyToOne
+    @JoinColumn(name = "TABLE_FK", referencedColumnName = "TABLE_ID")
+    private Dinnertable dinnertableByTableFk;
+
+    public Orders() {}
+
+    public Orders(Double price, Integer quantity, String note, Items itemsByItemFk, Dinnertable dinnertableByTableFk) {
+        this.price = price;
+        this.quantity = quantity;
+        this.note = note;
+        this.itemsByItemFk = itemsByItemFk;
+        this.dinnertableByTableFk = dinnertableByTableFk;
+    }
 
     public int getOrdersId() {
         return ordersId;
@@ -31,36 +49,28 @@ public class Orders {
         this.ordersId = ordersId;
     }
 
-    public int getTableFk() {
-        return tableFk;
-    }
-
-    public void setTableFk(int tableFk) {
-        this.tableFk = tableFk;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public int getItemFk() {
-        return itemFk;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setItemFk(int itemFk) {
-        this.itemFk = itemFk;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 
     @Override
@@ -68,11 +78,39 @@ public class Orders {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Orders orders = (Orders) o;
-        return ordersId == orders.ordersId && tableFk == orders.tableFk && quantity == orders.quantity && Double.compare(orders.price, price) == 0 && itemFk == orders.itemFk;
+        return ordersId == orders.ordersId && Objects.equals(price, orders.price) && Objects.equals(quantity, orders.quantity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ordersId, tableFk, quantity, price, itemFk);
+        return Objects.hash(ordersId, price, quantity);
+    }
+
+    public Items getItemsByItemFk() {
+        return itemsByItemFk;
+    }
+
+    public void setItemsByItemFk(Items itemsByItemFk) {
+        this.itemsByItemFk = itemsByItemFk;
+    }
+
+    public Dinnertable getDinnertableByTableFk() {
+        return dinnertableByTableFk;
+    }
+
+    public void setDinnertableByTableFk(Dinnertable dinnertableByTableFk) {
+        this.dinnertableByTableFk = dinnertableByTableFk;
+    }
+
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "ordersId=" + ordersId +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", note='" + note + '\'' +
+                ", itemsByItemFk=" + itemsByItemFk +
+                ", dinnertableByTableFk=" + dinnertableByTableFk +
+                '}';
     }
 }

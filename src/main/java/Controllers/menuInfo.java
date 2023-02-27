@@ -12,9 +12,6 @@ import java.util.List;
 
 @Named
 @RequestScoped
-@NamedQueries(
-        @NamedQuery(name = "", query = "")
-)
 public class menuInfo {
 
     @PersistenceContext(name = "default")
@@ -22,10 +19,10 @@ public class menuInfo {
 
     public String getName(){return "Menu";}
     public List<Items> getAllItems() {
-        return em.createNamedQuery("allItems", Items.class).getResultList();
+        return em.createNamedQuery("Items.all", Items.class).getResultList();
     }
 
-    public List<Items> getItemByCategory(char category) {
-        return em.createNamedQuery("Items.Category", Items.class).setParameter("itemCategory", category).getResultList();
+    public List<Items> getItemByCategory(String category) {
+        return em.createNamedQuery("Items.category", Items.class).setParameter("itemcategory", category).getResultList();
     }
 }

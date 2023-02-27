@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-//@Table(name = "DINNERTABLE", schema = "APP", catalog = "")
 public class Dinnertable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -46,7 +45,7 @@ public class Dinnertable {
 
     @Override
     public String toString() {
-        return "DinnertableEntity{" +
+        return "Dinnertable{" +
                 "tableId=" + tableId +
                 ", tablesize=" + tablesize +
                 '}';

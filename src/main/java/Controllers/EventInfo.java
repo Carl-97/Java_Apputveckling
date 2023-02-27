@@ -16,6 +16,6 @@ public class EventInfo {
     private EntityManager em;
 
     public List<Event> getEventInfo() {
-        return em.createNamedQuery("getEventInfo", Event.class).getResultList();
+        return em.createNamedQuery("Event.allOrderByDate", Event.class).getResultList();
     }
 }
