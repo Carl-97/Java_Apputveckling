@@ -1,9 +1,13 @@
 
-<html lang="sv">
-<link rel="stylesheet" href="resources/css/reservation.css"/>
-<script src="resources/js/reservation.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <head>
+  <link rel="stylesheet" href="resources/css/reservation.css"/>
+  <script src="resources/js/reservation.js"></script>
+
   <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,8 +30,9 @@
   <div class="card-reservation">
     <p class="res-tittle">Book a Table</p>
     <div class="form-wrapper">
-      <form>
+      <h:form>
         <label for="name">Name:</label>
+        <h:inputText value="#{lunch.name}"></h:inputText>
         <input type="text" id="name" name="name" required="required" />
 
         <label for="phone">Phone Number:</label>
@@ -52,7 +57,7 @@
           <option value="20:30 PM">8:00 PM</option>
         </select>
 
-        <input type="submit" value="Submit" />
+        <h:commandButton action="#{lunch.submit()}" type="submit" value="Submit" />
       </form>
     </div>
   </div>

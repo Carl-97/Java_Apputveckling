@@ -29,11 +29,11 @@
                   <p class ="week-number">Vecka #{lunchInfo.week}</p>
                   <p class ="header-open-hours-lunch">Man-Fre: 11:00 - 14:00</p>
                </div>
-               <ul class="menu-items">
-                  <h:panelGroup styleClass="menu-day">#{lunchInfo.currentDate}:</h:panelGroup>
+               <ul class="menu-items" >
+                  <h:panelGroup styleClass="menu-day" style="margin-bottom: 1em">#{lunchInfo.currentDate}:</h:panelGroup>
                   <ui:repeat value="#{lunchInfo.todaysLunch}" var="lunch">
                      <li  Class="menu-course" > #{lunch.name}
-                        <span class="menu-price">#{lunch.price}</span>
+                        <span class="menu-price">#{lunch.price} kr</span>
                      </li>
                   </ui:repeat>
                </ul>
