@@ -27,7 +27,7 @@ public class TodaysLunch {
 
     @Basic
     @Column(name = "PRICE")
-    private String price;
+    private Integer price;
     public int getLunchId() {
         return lunchId;
     }
@@ -60,10 +60,10 @@ public class TodaysLunch {
         this.name = name;
     }
 
-    public String getPrice() {
+    public Integer getPrice() {
         return price;
     }
-    public void setPrice(String price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
