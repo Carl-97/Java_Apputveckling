@@ -43,6 +43,22 @@ body {
     box-shadow: 5px 8px 10px hsla(0, 0%, 0%, 0.08);
 }
 
+.menu-course{
+
+    text-align: start;
+    font-weight: 250;
+    font-style: inherit;
+    margin-left: 20px;
+    font-size: 18px;
+    margin-bottom: 1em;
+
+}
+.menu-price {
+    float: right;
+    font-weight: inherit;
+    margin-right: 15px;
+}
+
 h2 {
     font-size: 38px;
 }
