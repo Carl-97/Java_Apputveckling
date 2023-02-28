@@ -10,7 +10,30 @@ body {
     overflow-y: scroll;
 }
 
-header {
+.header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 10px;
+    display: block;
+    padding-bottom: 10px;
+    box-shadow: 5px 8px 10px hsla(0,0%,0%, 0.08);
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 0 auto;
+
+}
+
+.footer-container > * {
+    margin: 3em;
+}
+
+.mainScreen {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
