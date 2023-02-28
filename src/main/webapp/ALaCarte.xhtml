@@ -19,26 +19,34 @@
             <ui:define name="dinnerList">
                 <h1>A La Carte</h1>
                 <h2>Förrätter</h2>
-                    <h:outputText
-                            value="#{menuInfo.allItems}"
-                            escape="false"
-                    >
-
-                    </h:outputText>
+                    <ui:repeat value="#{menuInfo.allItems}" var="value">
+                        <li class="menu-course>">
+                        #{value.name}
+                        <span class="menu-price">
+                            #{value.price}
+                        </span>
+                        </li>
+                    </ui:repeat>
                 <br/>
                 <h2>Huvudrätter</h2>
-                    <h:outputText
-                            value="#{menuInfo.allItems}"
-                            escape="false"
-                    >
-                    </h:outputText>
+                <ui:repeat value="#{menuInfo.allItems}" var="value">
+                    <li class="menu-course>">
+                        #{value.name}
+                        <span class="menu-price">
+                            #{value.price}
+                        </span>
+                    </li>
+                </ui:repeat>
                 <br/>
                 <h2>Efterrätter</h2>
-                    <h:outputText
-                            value="#{menuInfo.allItems}"
-                            escape="false"
-                    >
-                    </h:outputText>
+                <ui:repeat value="#{menuInfo.allItems}" var="value">
+                    <li class="menu-course>">
+                        #{value.name}
+                        <span class="menu-price">
+                            #{value.price}
+                        </span>
+                    </li>
+                </ui:repeat>
                 <br/>
                 </ui:define>
         </ui:composition>
