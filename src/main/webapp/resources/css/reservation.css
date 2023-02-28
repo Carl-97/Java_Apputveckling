@@ -116,6 +116,8 @@ select#time {
   padding: 10px;
   font-size: 16px;
 
+  font-size: 16px;
+
 }
 label[for="time"], select#time {
   display: inline-block;
@@ -123,7 +125,13 @@ label[for="time"], select#time {
   margin-bottom: 10px;
 }
 
-
+.empty-option {
+  background-color: white;
+  color: black;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+}
 .wrapper2{
   margin-top: 75px;
   display: flex;
@@ -138,7 +146,7 @@ label[for="time"], select#time {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  width: 125%;
+  width: 75%;
   margin: 0 auto;
 
 }

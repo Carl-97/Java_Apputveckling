@@ -10,10 +10,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Antons Skafferi</title>
+  <h:outputScript library="js" name="reservation.js" />
+  <h:outputStylesheet library="css" name="reservation.css" />
 </h:head>
 
 <h:body>
-<h:outputStylesheet library="css" name="reservation.css" />
+
 
   <h:panelGroup layout="block" styleClass="header">
 
@@ -22,43 +24,48 @@
 
   </h:panelGroup>
 
-<h:panelGroup styleClass="wrapper-reservation">
-  <img src="resources/images/tablebooking.jpg" alt="" class="image-reservation" id="menu-image" />
-  <div class="card-reservation">
-    <p class="res-tittle">Book a Table</p>
-    <div class="form-wrapper">
-      <h:form>
-        <label for="name">Name:</label>
-        <h:inputText id = "name" value="#{lunch.name}" required="true" />
+  <h:panelGroup styleClass="wrapper-reservation">
+    <img src="resources/images/tablebooking.jpg" alt="" class="image-reservation" id="menu-image" />
+    <div class="card-reservation">
+      <p class="res-tittle">Book a Table</p>
+      <div class="form-wrapper">
+        <h:form >
+          <label for="name">Name:</label>
+          <h:inputText id="name" value="#{bookingInfo.name}" required="true" />
 
 
-        <label for="phone">Phone Number:</label>
-        <h:inputText type="tel" id="phone" name="phone" required="true" />
+          <label for="phone">Phone Number:</label>
+          <h:inputText type="tel" id="phone" name="phone" value="#{bookingInfo.phone}" required="true" />
 
-        <label for="guests">Number of Guests:</label>
-        <h:inputText type="number" id="guests" name="guests" required="true"/>
+          <label for="guests">Number of Guests:</label>
+          <h:inputText type="number" id="guests" name="guests" value="#{bookingInfo.sizeofgroup}" required="true"/>
 
-        <label for="date">Date:</label>
-        <h:inputText type="date" id="date" name="date" required="true" />
+          <label for="date">Date:</label>
+          <h:inputText type="date" id="date" name="date" value="#{bookingInfo.date}" required="true" />
 
-        <label for="time">Time:</label>
-        <h:selectOneMenu id="time" name="time" required="true">
-          <f:selectItem value="">-- Select a time --</f:selectItem>
-          <f:selectItem itemValue="1" itemLabel="17:00PM"/>
-          <f:selectItem itemValue="2" itemLabel="17:30 PM"/>
-          <f:selectItem itemValue="3" itemLabel="18:00 PM"/>
-          <f:selectItem itemValue="4" itemLabel="18:30 PM"/>
-          <f:selectItem itemValue="5" itemLabel="19:00 PM"/>
-          <f:selectItem itemValue="6" itemLabel="19:30 PM"/>
-          <f:selectItem itemValue="7" itemLabel="20:00 PM"/>
-          <f:selectItem itemValue="8" itemLabel="20:30 PM"/>
-        </h:selectOneMenu>
+          <label for="time">Time:</label>
+          <h:selectOneMenu id="time" name="time" value="#{bookingInfo.time}" required="true" styleClass="empty-option" >
+            <f:selectItem itemValue="" itemLabel="" />
+            <f:selectItem itemValue="17:00 PM" itemLabel="17:00 PM"/>
+            <f:selectItem itemValue="17:30 PM" itemLabel="17:30 PM"/>
+            <f:selectItem itemValue="18:00 PM" itemLabel="18:00 PM"/>
+            <f:selectItem itemValue="18:30 PM" itemLabel="18:30 PM"/>
+            <f:selectItem itemValue="19:00 PM" itemLabel="19:00 PM"/>
+            <f:selectItem itemValue="19:30 PM" itemLabel="19:30 PM"/>
+            <f:selectItem itemValue="20:00 PM" itemLabel="20:00 PM"/>
+            <f:selectItem itemValue="20:30 PM" itemLabel="20:30 PM"/>
+          </h:selectOneMenu>
 
-        <h:commandButton action="#{lunch.submit()}" type="submit" value="Submit" />
-      </h:form>
+          <h:commandButton action="#{bookingInfo.submit()}" type="submit" value="Submit" />
+          <h:outputText id="message" value="#{bookingInfo.message}" rendered="#{not empty bookingInfo.message}" />
+
+        </h:form>
+      </div>
     </div>
-  </div>
-</h:panelGroup>
+  </h:panelGroup>
+
+
+
 
 
 
@@ -90,9 +97,6 @@
     </h:panelGroup>
 
   </h:panelGroup>
-
-
-
 
 
 
