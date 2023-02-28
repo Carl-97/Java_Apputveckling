@@ -28,8 +28,9 @@
             <h1>Week Menu</h1>
 
             <div class = "paragraphs">
-                <ui:repeat value="#{}" var="">
-
+                <ui:repeat value="#{lunchInfo.weeklyLunch}" var="value">
+                    #{value.name}<br/>
+                    #{value.price}<br/>
                 </ui:repeat>
             </div>
         </div>
