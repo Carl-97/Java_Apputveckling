@@ -5,29 +5,27 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@NamedQuery(
-        name = "allItems",
-        query = "SELECT e FROM Items e"
-)
+@NamedQueries({
+        @NamedQuery(name = "Items.all", query = "SELECT e FROM Items e"),
+        @NamedQuery(name = "Items.category", query = "SELECT e FROM Items e WHERE e.itemcategory = :itemcategory")
+})
 public class Items {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ITEM_ID")
     private int itemId;
     @Basic
+    @Column(name = "DESCRIPTION")
+    private String description;
+    @Basic
+    @Column(name = "ITEMCATEGORY")
+    private String itemcategory;
+    @Basic
     @Column(name = "NAME")
     private String name;
     @Basic
-    @Column(name = "DESCRIPTION")
-    private String desc;
-    @Basic
     @Column(name = "PRICE")
-    private int price;
-    @Basic
-    @Column(name = "itemCategory")
-    private char itemCategory;
-
-    public Items() {}
+    private Integer price;
 
     public int getItemId() {
         return itemId;
@@ -35,6 +33,22 @@ public class Items {
 
     public void setItemId(int itemId) {
         this.itemId = itemId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getItemcategory() {
+        return itemcategory;
+    }
+
+    public void setItemcategory(String itemcategory) {
+        this.itemcategory = itemcategory;
     }
 
     public String getName() {
@@ -45,28 +59,12 @@ public class Items {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Integer price) {
         this.price = price;
-    }
-
-    public char getItemCategory() {
-        return itemCategory;
-    }
-
-    public void setItemCategory(char itemCategory) {
-        this.itemCategory = itemCategory;
     }
 
     @Override
@@ -74,21 +72,21 @@ public class Items {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Items items = (Items) o;
-        return itemId == items.itemId && price == items.price && Objects.equals(name, items.name) && Objects.equals(desc, items.desc) && Objects.equals(itemCategory, items.itemCategory);
+        return itemId == items.itemId && Objects.equals(description, items.description) && Objects.equals(itemcategory, items.itemcategory) && Objects.equals(name, items.name) && Objects.equals(price, items.price);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(itemId, name, desc, price, itemCategory);
+        return Objects.hash(itemId, description, itemcategory, name, price);
     }
 
     @Override
     public String toString() {
         return "Items{" +
-                "name='" + name + '\'' +
-                ", desc='" + desc + '\'' +
+                "description='" + description + '\'' +
+                ", itemcategory='" + itemcategory + '\'' +
+                ", name='" + name + '\'' +
                 ", price=" + price +
-                ", itemCategory=" + itemCategory +
                 '}';
     }
 }

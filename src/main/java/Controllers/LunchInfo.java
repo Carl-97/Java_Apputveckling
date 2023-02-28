@@ -27,9 +27,11 @@ public class LunchInfo {
 
 
     public List<TodaysLunch> getTodaysLunch() {
-        //TypedQuery<Dagenslunch> query = em.createQuery("SELECT e FROM Dagenslunch e", Dagenslunch.class);
         return em.createNamedQuery("getTodayLunch", TodaysLunch.class).getResultList();
-        //return em.createQuery("SELECT e FROM Dagenslunch e WHERE e.date = CURRENT_DATE", Dagenslunch.class).getResultList();
+    }
+
+    public List<TodaysLunch> getTLunchConst() {
+        return em.createQuery("SELECT e FROM TodaysLunch e WHERE e.lunchId = 1", TodaysLunch.class).getResultList();
     }
 
     public Integer getNLunch(){
