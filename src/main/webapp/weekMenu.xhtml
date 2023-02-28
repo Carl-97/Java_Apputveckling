@@ -25,12 +25,13 @@
 
         <div  class="whitebox">
 
-            <h1>Week Menu</h1>
+            <h1>Week Menu #{lunchInfo.week}</h1>
 
             <div class = "paragraphs">
                 <ui:repeat value="#{lunchInfo.weeklyLunch}" var="value">
-                    #{value.name}<br/>
-                    #{value.price}<br/>
+                    <li  Class="menu-course" > #{value.name}
+                        <span class="menu-price">#{value.price} kr</span>
+                    </li>
                 </ui:repeat>
             </div>
         </div>

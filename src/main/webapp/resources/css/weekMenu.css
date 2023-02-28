@@ -8,7 +8,21 @@ body{
     margin: auto;
     text-align: center;
 }
+.menu-course{
 
+    text-align: start;
+    font-weight: 250;
+    font-style: inherit;
+    margin-left: 20px;
+    font-size: 18px;
+    margin-bottom: 1em;
+
+}
+.menu-price {
+    float: right;
+    font-weight: inherit;
+    margin-right: 15px;
+}
 .whitebox{
     
     background-color: white;
