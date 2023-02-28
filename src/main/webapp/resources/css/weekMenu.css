@@ -3,6 +3,12 @@ body{
 
 }
 
+.header{
+    display: block ;
+    margin: auto;
+    text-align: center;
+}
+
 .whitebox{
     
     background-color: white;
@@ -22,23 +28,6 @@ h1{
     text-align: center;
 }
 
-.header{
-    margin: auto;
-}
-
-header img{
-    display: block;
-    margin: 0 auto;
-}
-
-.table-booking{
-    text-align: right;
-    position: absolute;
-    font-size: 18px;
-    top: 1px;
-    right: 5px
-}
-
 .backgroundimg{
     background-repeat: no-repeat;
     background-size: cover;
@@ -47,3 +36,5 @@ header img{
     margin: auto;
     border-radius: 5px;
 }
+
+
