@@ -1,103 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/ALaCarte.css" />
-        <title>A La Carte</title>
-    </head>
-    <body>
-        <div id="mainScreen">
-            <div id="something">
-                <div id="dinner">
-                    <h2>Förrätt</h2>
-                    <ul id="dinnerList">
-                        <ol>
-                            <span>Pasta</span>
-                            <span>55 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Korv</span>
-                            <span>15 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Sallad</span>
-                            <span>40 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Lasagne</span>
-                            <span>85 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Ris</span>
-                            <span>45 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Lövbiff</span>
-                            <span>167 kr</span>
-                        </ol>
-                    </ul>
-                </div>
-                <div id="notDinner">
-                    <h2>Varmrätt</h2>
-                    <ul id="notDinnerList">
-                        <ol>
-                            <span>Pasta</span>
-                            <span>55 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Korv</span>
-                            <span>15 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Sallad</span>
-                            <span>40 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Lasagne</span>
-                            <span>85 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Ris</span>
-                            <span>45 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Lövbiff</span>
-                            <span>167 kr</span>
-                        </ol>
-                    </ul>
-                </div>
-                <div id="Drink">
-                    <h2>Efterrätt</h2>
-                    <ul id="drinkList">
-                        <ol>
-                            <span>Pasta</span>
-                            <span>55 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Korv</span>
-                            <span>15 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Sallad</span>
-                            <span>40 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Lasagne</span>
-                            <span>85 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Ris</span>
-                            <span>45 kr</span>
-                        </ol>
-                        <ol>
-                            <span>Lövbiff</span>
-                            <span>167 kr</span>
-                        </ol>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A La Carte</title>
+</h:head>
+
+
+<h:body>
+<h:outputStylesheet library="css" name="ALaCarte.css"/>
+    <h:panelGroup styleClass="header"/>
+    <h:graphicImage name="images/AntonsSkafferi.svg" alt="Antons Skafferi IMG" styleClass="header"/>
+    <ui:composition>
+            <ui:define name="dinnerList">
+                <h1>A La Carte</h1>
+                <h2>Förrätter</h2>
+                    <h:outputText
+                            value="#{menuInfo.allItems}"
+                            escape="false"
+                    >
+
+                    </h:outputText>
+                <br/>
+                <h2>Huvudrätter</h2>
+                    <h:outputText
+                            value="#{menuInfo.allItems}"
+                            escape="false"
+                    >
+                    </h:outputText>
+                <br/>
+                <h2>Efterrätter</h2>
+                    <h:outputText
+                            value="#{menuInfo.allItems}"
+                            escape="false"
+                    >
+                    </h:outputText>
+                <br/>
+                </ui:define>
+        </ui:composition>
+    </h:body>
 </html>
