@@ -9,7 +9,7 @@ body{
 }
 
 
-header{
+.header{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -19,7 +19,7 @@ header{
   padding-bottom: 10px;
 
 }
-header img {
+.headerimg {
   display: block;
   margin: 0 auto;
 }

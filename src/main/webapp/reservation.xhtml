@@ -1,67 +1,64 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<head>
-  <link rel="stylesheet" href="resources/css/reservation.css"/>
-  <script src="resources/js/reservation.js"></script>
-
-  <meta charset="UTF-8"/>
+<h:head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Antons Skafferi</title>
-</head>
+</h:head>
 
-<header>
-  <div class = "header">
+<h:body>
+<h:outputStylesheet library="css" name="reservation.css" />
 
-    <img src="resources/images/AntonsSkafferi.svg" alt="Antons Skafferi logo"/>
+  <h:panelGroup layout="block" styleClass="header">
 
-  </div>
+    <h:graphicImage name="images/AntonsSkafferi.svg" alt="Antons Skafferi logo" styleClass="headerimg"/>
 
-</header>
-<body>
 
-<main class="wrapper-reservation">
+  </h:panelGroup>
+
+<h:panelGroup styleClass="wrapper-reservation">
   <img src="resources/images/tablebooking.jpg" alt="" class="image-reservation" id="menu-image" />
   <div class="card-reservation">
     <p class="res-tittle">Book a Table</p>
     <div class="form-wrapper">
       <h:form>
         <label for="name">Name:</label>
-        <h:inputText value="#{lunch.name}"></h:inputText>
-        <input type="text" id="name" name="name" required="required" />
+        <h:inputText id = "name" value="#{lunch.name}" required="true" />
+
 
         <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required="required" />
+        <h:inputText type="tel" id="phone" name="phone" required="true" />
 
         <label for="guests">Number of Guests:</label>
-        <input type="number" id="guests" name="guests" required="required" />
+        <h:inputText type="number" id="guests" name="guests" required="true"/>
 
         <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required="required" />
+        <h:inputText type="date" id="date" name="date" required="true" />
 
         <label for="time">Time:</label>
-        <select id="time" name="time" required="required">
-          <option value="">-- Select a time --</option>
-          <option value="17:00 PM">12:00 PM</option>
-          <option value="17:30 PM">1:00 PM</option>
-          <option value="18:00 PM">2:00 PM</option>
-          <option value="18:30 PM">6:00 PM</option>
-          <option value="19:00 PM">7:00 PM</option>
-          <option value="19:30 PM">8:00 PM</option>
-          <option value="20:00 PM">8:00 PM</option>
-          <option value="20:30 PM">8:00 PM</option>
-        </select>
+        <h:selectOneMenu id="time" name="time" required="true">
+          <f:selectItem value="">-- Select a time --</f:selectItem>
+          <f:selectItem itemValue="1" itemLabel="17:00PM"/>
+          <f:selectItem itemValue="2" itemLabel="17:30 PM"/>
+          <f:selectItem itemValue="3" itemLabel="18:00 PM"/>
+          <f:selectItem itemValue="4" itemLabel="18:30 PM"/>
+          <f:selectItem itemValue="5" itemLabel="19:00 PM"/>
+          <f:selectItem itemValue="6" itemLabel="19:30 PM"/>
+          <f:selectItem itemValue="7" itemLabel="20:00 PM"/>
+          <f:selectItem itemValue="8" itemLabel="20:30 PM"/>
+        </h:selectOneMenu>
 
         <h:commandButton action="#{lunch.submit()}" type="submit" value="Submit" />
-      </form>
+      </h:form>
     </div>
   </div>
-</main>
+</h:panelGroup>
 
 
 
@@ -71,10 +68,9 @@
 
 
 
+  <h:panelGroup class="wrapper2">
 
-<main class = "wrapper2">
-  <footer>
-    <div class="footer-container">
+    <h:panelGroup layout="block" styleClass="footer-container">
       <div class="contact-info">
         <h3>Kontakt</h3>
         <p>Telefon: 010 34 34 34</p>
@@ -91,13 +87,14 @@
         <p>Fre-lor: 11:00 - 00:00</p>
         <p>Son: Stangt</p>
       </div>
-    </div>
-  </footer>
-</main>
+    </h:panelGroup>
+
+  </h:panelGroup>
 
 
 
 
 
-</body>
+
+</h:body>
 </html>
