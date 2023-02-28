@@ -1,32 +1,38 @@
-<!DOCTYPE html>
-<html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<head>
-    <meta charset="UTF-8"/>
+<h:head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/weekMenu.css"/>
-    <title>Week Menu</title>
-</head>
+    <title>Week menu</title>
+</h:head>
 
-<header>
-    <a href="url" class="table-booking">Boka Bord</a>
-    <img src="resources/images/AntonsSkafferi.svg" alt="Antons Skafferi logo"/>
-</header>
 
-<body>
-    <div class = "backgroundimg" style="background-image: url('images/weekMenu.jpg')">
 
-        <div class = "whitebox">
+<h:body>
+    <h:outputStylesheet library="css" name="weekMenu.css"/>
+
+    <div class="header">
+        <h:graphicImage  name="images/AntonsSkafferi.svg" alt="Antons Skafferi logo"/>
+    </div>
+
+    <div class = "backgroundimg" style="background-image: url('resources/images/weekMenu.jpg')">
+
+        <div  class="whitebox">
 
             <h1>Week Menu</h1>
 
             <div class = "paragraphs">
-                <p>Food 1</p>
-                <p>Food 2</p>
-                <p>food 3</p>
+                <ui:repeat value="#{}" var="">
+
+                </ui:repeat>
             </div>
         </div>
     </div>
-</body>
+</h:body>
 </html>
