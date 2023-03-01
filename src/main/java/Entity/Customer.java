@@ -6,6 +6,8 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.Objects;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @NamedQueries({
@@ -24,10 +26,10 @@ public class Customer implements Serializable {
     private Integer sizeofgroup;
     @Basic
     @Column(name = "DATE")
-    private Date date;
+    private LocalDate date;
     @Basic
     @Column(name = "TIME")
-    private Time time;
+    private LocalTime time;
     @Basic
     @Column(name = "PHONE")
     private String phone;
@@ -37,9 +39,12 @@ public class Customer implements Serializable {
     public Customer(String name, Integer sizeofgroup, Date date, Time time, String phone) {
         this.name = name;
         this.sizeofgroup = sizeofgroup;
-        this.date = date;
-        this.time = time;
+        this.date = date.toLocalDate();
+        this.time = time.toLocalTime();
         this.phone = phone;
+    }
+
+    public Customer(String name, Integer sizeofgroup, LocalDate date, LocalTime time, String phone) {
     }
 
     public int getCustomerId() {
@@ -66,19 +71,19 @@ public class Customer implements Serializable {
         this.sizeofgroup = sizeofgroup;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public Time getTime() {
+    public LocalTime getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(LocalTime time) {
         this.time = time;
     }
 

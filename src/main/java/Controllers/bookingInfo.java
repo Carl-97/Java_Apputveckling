@@ -4,6 +4,15 @@ import Entity.Customer;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
 import jakarta.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.convert.DateTimeConverter;
+import javax.faces.convert.FacesConverter;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 import java.sql.Date;
 import java.sql.Time;
@@ -14,8 +23,8 @@ import java.util.List;
 public class bookingInfo {
     private String name;
     private Integer sizeofgroup;
-    private Date date;
-    private Time time;
+    private LocalDate date;
+    private LocalTime time;
     private String phone;
     private String message;
 
@@ -41,19 +50,19 @@ public class bookingInfo {
         this.sizeofgroup = sizeofgroup;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public Time getTime() {
+    public LocalTime getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(LocalTime time) {
         this.time = time;
     }
 
@@ -83,7 +92,8 @@ public class bookingInfo {
     }
     public String submit() {
         createNewCustomer();
-        this.message = "Tack för din reservation !";
+        setMessage ("Tack för din reservation !");
+        clearFields();
         return null; // stay on the same page
     }
     public String getMessage() {
@@ -93,12 +103,41 @@ public class bookingInfo {
     public void setMessage(String message) {
         this.message = message;
     }
+
     public void clearFields() {
         this.name = null;
         this.sizeofgroup = null;
         this.date = null;
         this.time = null;
         this.phone = null;
+    }
+    @FacesConverter(value = "localTimeConverter")
+    public class LocalTimeConverter extends DateTimeConverter {
+
+        public LocalTimeConverter() {
+            setPattern("HH:mm");
+        }
+
+        @Override
+        public Object getAsObject(FacesContext facesContext, UIComponent uiComponent, String value) {
+            try {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern(getPattern());
+                LocalTime time = LocalTime.parse(value, formatter);
+                return time;
+            } catch (DateTimeParseException e) {
+                throw new IllegalArgumentException("Invalid time format", e);
+            }
+        }
+
+        @Override
+        public String getAsString(FacesContext facesContext, UIComponent uiComponent, Object value) {
+            if (value instanceof LocalTime) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern(getPattern());
+                return ((LocalTime) value).format(formatter);
+            } else {
+                throw new IllegalArgumentException("Invalid object type");
+            }
+        }
     }
 
 

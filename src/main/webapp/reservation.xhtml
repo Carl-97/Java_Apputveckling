@@ -10,7 +10,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Antons Skafferi</title>
-  <h:outputScript library="js" name="reservation.js" />
   <h:outputStylesheet library="css" name="reservation.css" />
 </h:head>
 
@@ -41,23 +40,16 @@
           <h:inputText type="number" id="guests" name="guests" value="#{bookingInfo.sizeofgroup}" required="true"/>
 
           <label for="date">Date:</label>
-          <h:inputText type="date" id="date" name="date" value="#{bookingInfo.date}" required="true" />
+          <h:inputText type="date" id="date" name="date" value="#{bookingInfo.date}" required="true" >
+            <f:convertDateTime pattern="yyyy-MM-dd" />
+          </h:inputText>
 
           <label for="time">Time:</label>
-          <h:selectOneMenu id="time" name="time" value="#{bookingInfo.time}" required="true" styleClass="empty-option" >
-            <f:selectItem itemValue="" itemLabel="" />
-            <f:selectItem itemValue="17:00 PM" itemLabel="17:00 PM"/>
-            <f:selectItem itemValue="17:30 PM" itemLabel="17:30 PM"/>
-            <f:selectItem itemValue="18:00 PM" itemLabel="18:00 PM"/>
-            <f:selectItem itemValue="18:30 PM" itemLabel="18:30 PM"/>
-            <f:selectItem itemValue="19:00 PM" itemLabel="19:00 PM"/>
-            <f:selectItem itemValue="19:30 PM" itemLabel="19:30 PM"/>
-            <f:selectItem itemValue="20:00 PM" itemLabel="20:00 PM"/>
-            <f:selectItem itemValue="20:30 PM" itemLabel="20:30 PM"/>
-          </h:selectOneMenu>
+          <h:inputText id="time" name="time" value="#{bookingInfo.time}" required="true" type="text" />
 
-          <h:commandButton action="#{bookingInfo.submit()}" type="submit" value="Submit" />
-          <h:outputText id="message" value="#{bookingInfo.message}" rendered="#{not empty bookingInfo.message}" />
+          <h:commandButton action="#{bookingInfo.submit()}" actionListener= "#{bookingInfo.message}" update="message" type="submit" value="Submit" />
+          <h:outputText value="#{bookingInfo.message}" />
+
 
         </h:form>
       </div>
