@@ -2,12 +2,13 @@
     font-family: Imprint MT Shadow, serif;
 }
 
-body {
+body{
     margin: 0;
     padding: 0;
+    background-image: linear-gradient(to bottom, #f3f3f3,#f4f4f4);
     scroll-behavior: smooth;
-    overflow-x: hidden;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .header {
@@ -19,28 +20,6 @@ body {
     padding-bottom: 10px;
     box-shadow: 5px 8px 10px hsla(0,0%,0%, 0.08);
     text-align: center;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    width: 75%;
-    margin: 0 auto;
-
-}
-
-.footer-container > * {
-    margin: 3em;
-}
-
-.mainScreen {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 10px;
-    padding-bottom: 10px;
-    display: block;
-    box-shadow: 5px 8px 10px hsla(0, 0%, 0%, 0.08);
 }
 
 .menu-course{
@@ -59,18 +38,8 @@ body {
     margin-right: 15px;
 }
 
-h2 {
+h1 {
     font-size: 38px;
-}
-
-#something {
-    margin-top: 50px;
-    padding: 2% 1%;
-    background-color: white;
-}
-
-#dinner{
-    background-color: white;
 }
 
 ul ol {
@@ -81,4 +50,17 @@ ul ol {
 }
 span {
     margin-top: 16px
+}
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 0 auto;
+
+}
+
+.footer-container > * {
+    margin: 3em;
 }
