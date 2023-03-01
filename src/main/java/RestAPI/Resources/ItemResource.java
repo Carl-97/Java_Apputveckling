@@ -1,4 +1,4 @@
-package RestAPI.Resurces;
+package RestAPI.Resources;
 
 import Entity.Items;
 import RestAPI.Request.CreateItemRequest;

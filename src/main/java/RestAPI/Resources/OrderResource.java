@@ -1,4 +1,4 @@
-package RestAPI.Resurces;
+package RestAPI.Resources;
 
 import Entity.Orders;
 import RestAPI.Request.CreateOrderRequest;
@@ -10,8 +10,6 @@ import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-
-import java.util.ArrayList;
 
 @ApplicationScoped
 @Transactional(Transactional.TxType.REQUIRED)
