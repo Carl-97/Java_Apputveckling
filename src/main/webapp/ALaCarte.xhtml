@@ -1,58 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+        >
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
 <h:head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A La Carte</title>
 </h:head>
 
-
 <h:body>
-<h:outputStylesheet library="css" name="ALaCarte.css"/>
-    <h:panelGroup styleClass="header"/>
-    <h:graphicImage name="images/AntonsSkafferi.svg" alt="Antons Skafferi IMG" styleClass="header"/>
+
+    <h:panelGroup layout="block" styleClass="header">
+        <h:graphicImage name="images/AntonsSkafferi.svg" alt="Antons Skafferi IMG" styleClass="header"/>
+        <span class="headertitle">A La Carte</span>>
+    </h:panelGroup>
+
     <ui:composition>
             <ui:define name="dinnerList">
-                <h1>A La Carte</h1>
-                <h2>Förrätter</h2>
-                    <ui:repeat value="#{menuInfo.allItems}" var="value">
-                        <li class="menu-course>">
+
+                <h1>Förrätter</h1>
+                <ui:repeat value="#{menuInfo.getItemByCategory('F')}" var="value">
+                    <li class="menu-course>">
                         #{value.name}
-                        <span class="menu-price">
-                            #{value.price}
-                        </span>
-                        </li>
-                    </ui:repeat>
+                        <span class="menu-price">#{value.price}</span>
+                    </li>
+                </ui:repeat><br/>
+
+
+                <h1>Huvudrätter</h1>
                 <ui:repeat value="#{menuInfo.getItemByCategory('V')}" var="value">
-                    #{value.name}
-                </ui:repeat>
-                <br/>
-                <h2>Huvudrätter</h2>
-                <ui:repeat value="#{menuInfo.allItems}" var="value">
+                    <li class="menu-course">
+                        #{value.name}
+                        <span class="menu-price">#{value.price}</span>
+                    </li>
+                </ui:repeat><br/>
+
+
+                <h1>Efterrätter</h1>
+                <ui:repeat value="#{menuInfo.getItemByCategory('E')}" var="value">
                     <li class="menu-course>">
                         #{value.name}
-                        <span class="menu-price">
-                            #{value.price}
-                        </span>
+                        <span class="menu-price">#{value.price}</span>
                     </li>
-                </ui:repeat>
-                <br/>
-                <h2>Efterrätter</h2>
-                <ui:repeat value="#{menuInfo.allItems}" var="value">
+                </ui:repeat><br/>
+
+
+                <h1>Drycker</h1>
+                <ui:repeat value="#{menuInfo.getItemByCategory('D')}" var="value">
                     <li class="menu-course>">
                         #{value.name}
-                        <span class="menu-price">
-                            #{value.price}
-                        </span>
+                        <span class="menu-price">#{value.price}</span>
                     </li>
                 </ui:repeat>
-                <br/>
+
+
                 </ui:define>
         </ui:composition>
+
+    <h:panelGroup layout="block" styleClass="footer-container">
+    </h:panelGroup>
+
+
     </h:body>
 </html>
