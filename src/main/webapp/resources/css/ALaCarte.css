@@ -2,6 +2,19 @@
     font-family: Imprint MT Shadow, serif;
 }
 
+.menu-course{
+    text-align: justify;
+    font-weight: 250;
+    margin-left: 20px;
+    font-size: 18px;
+    margin-bottom: 1em;
+}
+.menu-price {
+    float: right;
+    font-weight: inherit;
+    margin-right: 15px;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -9,6 +22,17 @@ body{
     scroll-behavior: smooth;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+.dinnerTable {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 10px;
+    display: block;
+    padding-bottom: 10px;
+    box-shadow: 5px 8px 10px hsla(0,0%,0%, 0.08);
+    text-align: center;
 }
 
 .header {
@@ -22,45 +46,17 @@ body{
     text-align: center;
 }
 
-.menu-course{
-
-    text-align: start;
-    font-weight: 250;
-    font-style: inherit;
-    margin-left: 20px;
-    font-size: 18px;
-    margin-bottom: 1em;
-
-}
-.menu-price {
-    float: right;
-    font-weight: inherit;
-    margin-right: 15px;
-}
-
-h1 {
-    font-size: 38px;
-}
-
-ul ol {
+ul {
     display: grid;
-    grid-template-columns: 4fr 1fr;
-    font-size: 22px;
-    border-bottom: 1px dotted;
+    grid-auto-columns: 4fr 1fr;
 }
+
 span {
     margin-top: 16px
 }
 
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    width: 75%;
-    margin: 0 auto;
-
-}
-
-.footer-container > * {
-    margin: 3em;
+.headerTitle{
+    margin: 0;
+    padding: 0;
 }
