@@ -1,6 +1,6 @@
-package RestAPI.Resurces;
+package RestAPI.Resources;
 
-import Entity.Items;
+import Entity.TodaysLunch;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -13,20 +13,15 @@ import jakarta.ws.rs.core.Response;
 @Transactional(Transactional.TxType.REQUIRED)
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-@Path("/item")
-public class ItemResource {
+@Path("/lunch")
+public class LunchResource {
 
     @PersistenceContext
     EntityManager em;
 
     @GET
-    public Response GetAllItems(){
-        return Response.ok(em.createNamedQuery("Items.all", Items.class).getResultList()).build();
-    }
-
-    @GET
-    @Path("/{category}")
-    public Response GetItemByCat(@PathParam("category") String category){
-        return Response.ok(em.createNamedQuery("Items.category", Items.class).setParameter("itemcategory", category).getResultList()).build();
+    @Path("/week")
+    public Response getWeeksLunch() {
+        return Response.ok(em.createNamedQuery("Lunch.week", TodaysLunch.class).getResultList()).build();
     }
 }

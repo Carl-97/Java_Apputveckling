@@ -1,4 +1,4 @@
-package RestAPI.Resurces;
+package RestAPI.Resources;
 
 import Entity.Orders;
 import Entity.TodaysLunch;
@@ -14,7 +14,7 @@ import jakarta.ws.rs.core.Response;
 @Transactional(Transactional.TxType.REQUIRED)
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-@Path("/lunch")
+@Path("/test")
 public class Resource {
 
     @PersistenceContext
