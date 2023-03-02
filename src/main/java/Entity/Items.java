@@ -36,6 +36,13 @@ public class Items {
         this.price = createItemRequest.getPrice();
     }
 
+    public Items(String description, String itemCategory, String name, Integer price) {
+        this.description = description;
+        this.itemCategory = itemCategory;
+        this.name = name;
+        this.price = price;
+    }
+
     public int getItemId() {
         return itemId;
     }
