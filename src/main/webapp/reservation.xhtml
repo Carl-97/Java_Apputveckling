@@ -45,7 +45,19 @@
           </h:inputText>
 
           <label for="time">Time:</label>
-          <h:inputText id="time" name="time" value="#{bookingInfo.time}" required="true" type="text" />
+
+          <label for="time">Time:</label>
+          <h:selectOneMenu id="time" name="time" value="#{bookingInfo.time}" required="true" styleClass="empty-option" >
+            <f:selectItem itemValue="" itemLabel=" Select a Time " />
+            <f:selectItem itemValue="17:00 PM" itemLabel="17:00 PM"/>
+            <f:selectItem itemValue="17:30 PM" itemLabel="17:30 PM"/>
+            <f:selectItem itemValue="18:00 PM" itemLabel="18:00 PM"/>
+            <f:selectItem itemValue="18:30 PM" itemLabel="18:30 PM"/>
+            <f:selectItem itemValue="19:00 PM" itemLabel="19:00 PM"/>
+            <f:selectItem itemValue="19:30 PM" itemLabel="19:30 PM"/>
+            <f:selectItem itemValue="20:00 PM" itemLabel="20:00 PM"/>
+            <f:selectItem itemValue="20:30 PM" itemLabel="20:30 PM"/>
+          </h:selectOneMenu>
 
           <h:commandButton action="#{bookingInfo.submit()}" actionListener= "#{bookingInfo.message}" update="message" type="submit" value="Submit" />
           <h:outputText value="#{bookingInfo.message}" />
