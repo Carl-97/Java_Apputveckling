@@ -57,12 +57,19 @@
     font-style: normal;
     font-family: Imprint MT Shadow, serif;
     padding-top: 25px;
-    font-size: 25px;
+    font-size: 50px;
 }
 
 
 .menu-items{
     margin-bottom: 1em;
+
+}
+.list-items{
+    font-size: 30px;
+    font-weight: 550;
+    font-style: italic;
+    font-family: serif;
 }
 .admin-image{
 
