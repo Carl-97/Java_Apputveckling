@@ -4,8 +4,6 @@ import Entity.Items;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 
@@ -14,12 +12,22 @@ import java.util.List;
 @Named
 @RequestScoped
 @Transactional(Transactional.TxType.REQUIRED)
-public class menuInfo {
+public class MenuInfo {
 
     private String description;
     private String itemCategory;
     private String name;
     private Integer price;
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @PersistenceContext(name = "default")
     private EntityManager em;
 
@@ -40,7 +48,7 @@ public class menuInfo {
         this.itemCategory = itemCategory;
     }
 
-    public String getName(){return "Menu";}
+    public String getName(){return name;}
 
     public void setName(String name) {
         this.name = name;
@@ -54,12 +62,17 @@ public class menuInfo {
         this.price = price;
     }
 
-    public void submit() {
+    public void insert() {
         Items item = new Items(description, itemCategory, name, price);
         em.persist(item);
     }
 
-    public void update(int id) {
+    public void delete() {
+        Items item = em.find(Items.class, id);
+        em.remove(item);
+    }
+
+    public void update() {
         Items item = em.find(Items.class, id);
         item.setDescription(description);
         item.setItemcategory(itemCategory);
@@ -67,15 +80,6 @@ public class menuInfo {
         item.setPrice(price);
     }
 
-    public void delete(int id) {
-        Items item = em.find(Items.class, id);
-        em.remove(item);
-    }
-
-    public void testDelete() {
-        Items item = em.find(Items.class, 1);
-        em.remove(item);
-    }
     public List<Items> getAllItems() {
         return em.createNamedQuery("Items.all", Items.class).getResultList();
     }

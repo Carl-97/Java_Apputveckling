@@ -26,10 +26,19 @@ public class TodaysLunch {
     @Basic
     @Column(name = "NAME")
     private String name;
-
     @Basic
     @Column(name = "PRICE")
     private Integer price;
+
+    public TodaysLunch() {}
+
+    public TodaysLunch(String desc, Date date, String name, Integer price) {
+        this.desc = desc;
+        this.date = date;
+        this.name = name;
+        this.price = price;
+    }
+
     public int getId() {
         return id;
     }

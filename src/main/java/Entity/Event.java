@@ -7,7 +7,7 @@ import java.util.Objects;
 
 @Entity
 @NamedQuery(
-        name = "getEventInfo",
+        name = "Event.allOrderByDate",
         query = "SELECT e FROM Event e ORDER BY e.date ASC"
 )
 public class Event {
@@ -24,6 +24,14 @@ public class Event {
     @Basic
     @Column(name = "NAME")
     private String name;
+
+    public Event() {}
+
+    public Event(String description, Date date, String name) {
+        this.description = description;
+        this.date = date;
+        this.name = name;
+    }
 
     public int getId() {
         return id;

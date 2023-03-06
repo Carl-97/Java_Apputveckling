@@ -11,7 +11,7 @@ import java.util.Date;
 @Named
 @RequestScoped
 @Transactional(Transactional.TxType.REQUIRED)
-public class bookingInfo {
+public class BookingInfo {
 
     private String name;
     private Integer sizeofgroup;

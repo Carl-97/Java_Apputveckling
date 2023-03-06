@@ -17,7 +17,7 @@ public class User {
     @Column(name = "PASSWORD")
     private String password;
     @Basic
-    @Column(name = "ADMIN")
+    @Column(name = "ADMIN", columnDefinition = "false")
     private Boolean admin;
 
     public int getId() {
