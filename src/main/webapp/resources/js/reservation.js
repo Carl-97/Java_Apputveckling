@@ -16,3 +16,7 @@ form.addEventListener('submit', (event) => {
         alert('Your reservation has been submitted');
     }
 });
+
+function getName() {
+    const val = document.getElementById('name').value;
+}

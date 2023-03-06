@@ -32,7 +32,6 @@
           <label for="name">Name:</label>
           <h:inputText id="name" value="#{bookingInfo.name}" required="true" />
 
-
           <label for="phone">Phone Number:</label>
           <h:inputText type="tel" id="phone" name="phone" value="#{bookingInfo.phone}" required="true" />
 
@@ -41,27 +40,23 @@
 
           <label for="date">Date:</label>
           <h:inputText type="date" id="date" name="date" value="#{bookingInfo.date}" required="true" >
-            <f:convertDateTime pattern="yyyy-MM-dd" />
+            <f:convertDateTime dateStyle="short" pattern="yyyy-mm-dd"/>
           </h:inputText>
-
-          <label for="time">Time:</label>
 
           <label for="time">Time:</label>
           <h:selectOneMenu id="time" name="time" value="#{bookingInfo.time}" required="true" styleClass="empty-option" >
             <f:selectItem itemValue="" itemLabel=" Select a Time " />
-            <f:selectItem itemValue="17:00 PM" itemLabel="17:00 PM"/>
-            <f:selectItem itemValue="17:30 PM" itemLabel="17:30 PM"/>
-            <f:selectItem itemValue="18:00 PM" itemLabel="18:00 PM"/>
-            <f:selectItem itemValue="18:30 PM" itemLabel="18:30 PM"/>
-            <f:selectItem itemValue="19:00 PM" itemLabel="19:00 PM"/>
-            <f:selectItem itemValue="19:30 PM" itemLabel="19:30 PM"/>
-            <f:selectItem itemValue="20:00 PM" itemLabel="20:00 PM"/>
-            <f:selectItem itemValue="20:30 PM" itemLabel="20:30 PM"/>
+            <f:selectItem itemValue="17:00" itemLabel="17:00 PM"/>
+            <f:selectItem itemValue="17:30" itemLabel="17:30 PM"/>
+            <f:selectItem itemValue="18:00" itemLabel="18:00 PM"/>
+            <f:selectItem itemValue="18:30" itemLabel="18:30 PM"/>
+            <f:selectItem itemValue="19:00" itemLabel="19:00 PM"/>
+            <f:selectItem itemValue="19:30" itemLabel="19:30 PM"/>
+            <f:selectItem itemValue="20:00" itemLabel="20:00 PM"/>
+            <f:selectItem itemValue="20:30" itemLabel="20:30 PM"/>
           </h:selectOneMenu>
-
-          <h:commandButton action="#{bookingInfo.submit()}" actionListener= "#{bookingInfo.message}" update="message" type="submit" value="Submit" />
-          <h:outputText value="#{bookingInfo.message}" />
-
+          <h:commandButton action="#{bookingInfo.submit()}" actionListener="Succeed" update="message" type="submit" value="Submit" />
+          <h:outputText value="" />
 
         </h:form>
       </div>

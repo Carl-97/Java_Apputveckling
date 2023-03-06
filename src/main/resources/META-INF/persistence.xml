@@ -11,6 +11,7 @@
         <class>Entity.Orders</class>
         <class>Entity.Event</class>
         <class>Entity.Customer</class>
+        <class>Entity.User</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:derby://localhost:1527/DEFAULT"/>
             <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver"/>

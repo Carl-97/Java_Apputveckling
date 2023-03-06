@@ -16,7 +16,7 @@ public class TodaysLunch {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "LUNCH_ID")
-    private int lunchId;
+    private int id;
     @Basic
     @Column(name = "DESCRIPTION")
     private String desc;
@@ -30,12 +30,12 @@ public class TodaysLunch {
     @Basic
     @Column(name = "PRICE")
     private Integer price;
-    public int getLunchId() {
-        return lunchId;
+    public int getId() {
+        return id;
     }
 
-    public void setLunchId(int lunchId) {
-        this.lunchId = lunchId;
+    public void setId(int lunchId) {
+        this.id = lunchId;
     }
 
     public String getDesc() {
@@ -74,12 +74,12 @@ public class TodaysLunch {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TodaysLunch that = (TodaysLunch) o;
-        return lunchId == that.lunchId && Objects.equals(desc, that.desc) && Objects.equals(date, that.date) && Objects.equals(name, that.name)&& Objects.equals(price, that.price);
+        return id == that.id && Objects.equals(desc, that.desc) && Objects.equals(date, that.date) && Objects.equals(name, that.name)&& Objects.equals(price, that.price);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lunchId, desc, date, name,price);
+        return Objects.hash(id, desc, date, name,price);
     }
 
     @Override

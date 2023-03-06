@@ -3,11 +3,8 @@ package Entity;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.sql.Date;
-import java.sql.Time;
+import java.util.Date;
 import java.util.Objects;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Entity
 @NamedQueries({
@@ -17,7 +14,7 @@ public class Customer implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "CUSTOMER_ID")
-    private int customerId;
+    private int id;
     @Basic
     @Column(name = "NAME")
     private String name;
@@ -26,33 +23,30 @@ public class Customer implements Serializable {
     private Integer sizeofgroup;
     @Basic
     @Column(name = "DATE")
-    private LocalDate date;
+    private Date date;
     @Basic
     @Column(name = "TIME")
-    private LocalTime time;
+    private String time;
     @Basic
     @Column(name = "PHONE")
     private String phone;
 
     public Customer() {}
 
-    public Customer(String name, Integer sizeofgroup, Date date, Time time, String phone) {
+    public Customer(String name, Integer sizeofgroup, Date date, String time, String phone) {
         this.name = name;
         this.sizeofgroup = sizeofgroup;
-        this.date = date.toLocalDate();
-        this.time = time.toLocalTime();
+        this.date = date;
+        this.time = time;
         this.phone = phone;
     }
 
-    public Customer(String name, Integer sizeofgroup, LocalDate date, LocalTime time, String phone) {
+    public int getId() {
+        return id;
     }
 
-    public int getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setId(int customerId) {
+        this.id = customerId;
     }
 
     public String getName() {
@@ -71,19 +65,19 @@ public class Customer implements Serializable {
         this.sizeofgroup = sizeofgroup;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public LocalTime getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(LocalTime time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
@@ -100,11 +94,11 @@ public class Customer implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
-        return customerId == customer.customerId && Objects.equals(name, customer.name) && Objects.equals(sizeofgroup, customer.sizeofgroup) && Objects.equals(date, customer.date) && Objects.equals(time, customer.time) && Objects.equals(phone, customer.phone);
+        return id == customer.id && Objects.equals(name, customer.name) && Objects.equals(sizeofgroup, customer.sizeofgroup) && Objects.equals(date, customer.date) && Objects.equals(time, customer.time) && Objects.equals(phone, customer.phone);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customerId, name, sizeofgroup, date, time, phone);
+        return Objects.hash(id, name, sizeofgroup, date, time, phone);
     }
 }
