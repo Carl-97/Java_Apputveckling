@@ -24,39 +24,20 @@ public class CreateOrderRequest {
         return price;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
     public Integer getQuantity() {
         return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
     }
 
     public String getNote() {
         return note;
     }
 
-    public void setNote(String note) {
-        this.note = note;
-    }
-
     public Items getItemsByItemFk() {
         return itemsByItemFk;
-    }
-
-    public void setItemsByItemFk(Items itemsByItemFk) {
-        this.itemsByItemFk = itemsByItemFk;
     }
 
     public Dinnertable getDinnertableByTableFk() {
         return dinnertableByTableFk;
     }
 
-    public void setDinnertableByTableFk(Dinnertable dinnertableByTableFk) {
-        this.dinnertableByTableFk = dinnertableByTableFk;
-    }
 }

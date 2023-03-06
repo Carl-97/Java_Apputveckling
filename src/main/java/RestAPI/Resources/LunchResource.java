@@ -24,4 +24,6 @@ public class LunchResource {
     public Response getWeeksLunch() {
         return Response.ok(em.createNamedQuery("Lunch.week", TodaysLunch.class).getResultList()).build();
     }
+
+
 }

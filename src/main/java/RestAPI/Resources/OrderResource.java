@@ -15,17 +15,18 @@ import jakarta.ws.rs.core.Response;
 @Transactional(Transactional.TxType.REQUIRED)
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-@Path("/order")
+@Path("/orders")
 public class OrderResource {
 
     @PersistenceContext
     EntityManager em;
 
     @GET
-    @Path("/{ID}")
+    @Path("order/{ID}")
     public Response GetOrderByID(@PathParam("ID") Integer ID){
         return Response.ok(em.createNamedQuery("Orders.byTableID", Orders.class).setParameter(1, ID).getResultList()).build();
     }
+
     @GET
     @Path("/kitchen")
     public Response GetOrderToKitchen(){
@@ -33,9 +34,8 @@ public class OrderResource {
     }
 
     @POST
-    @Path("/neworder")
+    @Path("post/order")
     public Response CreateNewOrder(@Valid CreateOrderRequest createOrderRequest){
-
         Orders order = new Orders(createOrderRequest);
         em.persist(order);
         return Response.ok(order).build();

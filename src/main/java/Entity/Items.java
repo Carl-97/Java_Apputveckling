@@ -8,7 +8,7 @@ import java.util.Objects;
 @Entity
 @NamedQueries({
         @NamedQuery(name = "Items.all", query = "SELECT e FROM Items e"),
-        @NamedQuery(name = "Items.category", query = "SELECT e FROM Items e WHERE e.itemCategory = :itemcategory")
+        @NamedQuery(name = "Items.category", query = "SELECT e FROM Items e WHERE e.itemCategory = :itemCategory")
 })
 public class Items {
     @GeneratedValue(strategy = GenerationType.IDENTITY)

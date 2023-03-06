@@ -15,7 +15,7 @@ import jakarta.ws.rs.core.Response;
 @Transactional(Transactional.TxType.REQUIRED)
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-@Path("/item")
+@Path("/items")
 public class ItemResource {
 
     @PersistenceContext
@@ -27,15 +27,16 @@ public class ItemResource {
     }
 
     @GET
-    @Path("/{category}")
-    public Response GetItemByCat(@PathParam("category") String category) {
+    //@Path("/{category}")
+    @Path("/item")
+    public Response GetItemByCat(@QueryParam("category") String category) {
         return Response.ok(em.createNamedQuery("Items.category", Items.class).setParameter("itemCategory", category).getResultList()).build();
     }
 
     @POST
-    @Path("/newitem")
+    @Path("post/item")
     public Response CreateItem(@Valid CreateItemRequest itemRequest) {
-        if (em.find(Items.class, itemRequest.getItemId()) != null){
+        if (em.find(Items.class, itemRequest.getName()) != null){
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
         Items items = new Items(itemRequest);
