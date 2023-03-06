@@ -18,13 +18,13 @@ public class MenuInfo {
     private String itemCategory;
     private String name;
     private Integer price;
-    private Integer id;
+    private int id;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -89,6 +89,10 @@ public class LunchInfo {
         return em.createNamedQuery("Lunch.all", TodaysLunch.class).getResultList();
     }
 
+    public List<TodaysLunch> getAllByDate() {
+        return em.createNamedQuery("Lunch.allOrderByDate", TodaysLunch.class).getResultList();
+    }
+
     public Integer getNLunch(){
         TypedQuery<TodaysLunch> query = em.createQuery("SELECT e FROM TodaysLunch e", TodaysLunch.class);
         return query.getResultList().size();
