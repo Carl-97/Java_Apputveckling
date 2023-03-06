@@ -24,25 +24,25 @@ public class EventResource {
     EntityManager em;
 
     @GET
-    public Response GetAllEvents() {
+    public Response getAllEvents() {
         return Response.ok(em.createNamedQuery("Items.all", Items.class).getResultList()).build();
     }
 
-    @GET
+/*    @GET
     @Path("/event")
-    public Response GetEventById(@QueryParam("ID") int Id) {
+    public Response getEventById(@QueryParam("ID") int Id) {
         return Response.ok(em.createNamedQuery("Event.ByID", Event.class).setParameter("itemCategory", category).getResultList()).build();
     }
 
     @GET
     @Path("/event")
-    public Response GetEventByDate(@QueryParam("date")Date date) {
+    public Response getEventByDate(@QueryParam("date")Date date) {
         return Response.ok(em.createNamedQuery("Event.ByDate", Event.class).setParameter("itemCategory", category).getResultList()).build();
-    }
+    }*/
 
     @POST
     @Path("post/item")
-    public Response CreateItem(@Valid CreateItemRequest itemRequest) {
+    public Response createItem(@Valid CreateItemRequest itemRequest) {
         Items items = new Items(itemRequest);
         em.persist(items);
         return Response.ok(itemRequest).build();

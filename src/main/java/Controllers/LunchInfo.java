@@ -19,7 +19,7 @@ public class LunchInfo {
         return "LunchInfo";
     }
     public List<TodaysLunch> getTodaysLunch() {
-        return em.createNamedQuery("getTodayLunch", TodaysLunch.class).getResultList();
+        return em.createNamedQuery("Lunch.today", TodaysLunch.class).getResultList();
     }
 
     public List<TodaysLunch> getTLunchConst() {

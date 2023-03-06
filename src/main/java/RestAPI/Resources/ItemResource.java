@@ -22,25 +22,34 @@ public class ItemResource {
     EntityManager em;
 
     @GET
-    public Response GetAllItems() {
+    public Response getAllItems() {
         return Response.ok(em.createNamedQuery("Items.all", Items.class).getResultList()).build();
     }
 
     @GET
-    //@Path("/{category}")
-    @Path("/item")
-    public Response GetItemByCat(@QueryParam("category") String category) {
+    @Path("/{category}")
+    public Response getItemByCat(@PathParam("category") String category) {
         return Response.ok(em.createNamedQuery("Items.category", Items.class).setParameter("itemCategory", category).getResultList()).build();
     }
 
     @POST
-    @Path("post/item")
-    public Response CreateItem(@Valid CreateItemRequest itemRequest) {
-        if (em.find(Items.class, itemRequest.getName()) != null){
+    public Response createItem(@Valid CreateItemRequest itemRequest) {
+/*        if (em.find(Items.class, itemRequest.getName()) != null){
             return Response.status(Response.Status.BAD_REQUEST).build();
-        }
+        }*/
         Items items = new Items(itemRequest);
         em.persist(items);
         return Response.ok(itemRequest).build();
+    }
+
+    @DELETE
+    @Path("/{id}")
+    public Response deleteItems(@PathParam("id") Integer ID){
+        Items itemToDelete = em.find(Items.class, ID);
+        if (itemToDelete == null){
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+        em.remove(itemToDelete);
+        return Response.ok().build();
     }
 }

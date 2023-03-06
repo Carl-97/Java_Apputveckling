@@ -7,9 +7,8 @@ import java.util.Objects;
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "getTodayLunch", query = "SELECT e FROM TodaysLunch e WHERE e.date = CURRENT_DATE"),
+        @NamedQuery(name = "Lunch.today", query = "SELECT e FROM TodaysLunch e WHERE e.date = CURRENT_DATE"),
         @NamedQuery(name = "Lunch.week", query = "SELECT e FROM TodaysLunch e")
-        //@NamedQuery(name = "Lunch.create", query = "INSERT INTO TodaysLunch(DATE, DESCRIPTION, NAME) VALUES ('2023-02-23','Varmrätt','Pasta')")
 })
 public class TodaysLunch {
     @GeneratedValue(strategy = GenerationType.IDENTITY)

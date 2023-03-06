@@ -19,10 +19,16 @@ public class CreateItemRequest {
         return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
     public String getItemCategory() {
         return itemCategory;
     }
 
+    public void setItemCategory(String itemCategory) {
+        this.itemCategory = itemCategory;
+    }
     public String getName() {
         return name;
     }
@@ -35,4 +41,7 @@ public class CreateItemRequest {
         return price;
     }
 
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
 }

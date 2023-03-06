@@ -1,5 +1,6 @@
 package RestAPI.Resources;
 
+import Entity.Items;
 import Entity.Orders;
 import RestAPI.Request.CreateOrderRequest;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -22,22 +23,31 @@ public class OrderResource {
     EntityManager em;
 
     @GET
-    @Path("order/{ID}")
-    public Response GetOrderByID(@PathParam("ID") Integer ID){
+    @Path("{ID}")
+    public Response getOrderByID(@PathParam("ID") Integer ID){
         return Response.ok(em.createNamedQuery("Orders.byTableID", Orders.class).setParameter(1, ID).getResultList()).build();
     }
 
     @GET
     @Path("/kitchen")
-    public Response GetOrderToKitchen(){
+    public Response getOrderToKitchen(){
         return Response.ok(em.createNamedQuery("Orders.ToKitchen", Orders.class).getResultList()).build();
     }
 
     @POST
-    @Path("post/order")
-    public Response CreateNewOrder(@Valid CreateOrderRequest createOrderRequest){
+    public Response createNewOrder(@Valid CreateOrderRequest createOrderRequest){
         Orders order = new Orders(createOrderRequest);
         em.persist(order);
         return Response.ok(order).build();
+    }
+    @DELETE
+    @Path("/{id}")
+    public Response deleteItems(@PathParam("id") Integer ID){
+        Orders orderToDelete = em.find(Orders.class, ID);
+        if (orderToDelete == null){
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+        em.remove(orderToDelete);
+        return Response.ok().build();
     }
 }

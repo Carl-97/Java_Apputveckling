@@ -20,6 +20,10 @@ public class CreateOrderRequest {
         this.dinnertableByTableFk = dinnertableByTableFk;
     }
 
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     public Double getPrice() {
         return price;
     }
@@ -28,16 +32,31 @@ public class CreateOrderRequest {
         return quantity;
     }
 
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
     public String getNote() {
         return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 
     public Items getItemsByItemFk() {
         return itemsByItemFk;
     }
 
+    public void setItemsByItemFk(Items itemsByItemFk) {
+        this.itemsByItemFk = itemsByItemFk;
+    }
+
     public Dinnertable getDinnertableByTableFk() {
         return dinnertableByTableFk;
     }
 
+    public void setDinnertableByTableFk(Dinnertable dinnertableByTableFk) {
+        this.dinnertableByTableFk = dinnertableByTableFk;
+    }
 }
