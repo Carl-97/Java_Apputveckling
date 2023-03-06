@@ -13,17 +13,17 @@ public class Dinnertable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "TABLE_ID")
-    private int tableId;
+    private int id;
     @Basic
     @Column(name = "TABLESIZE")
     private Integer tablesize;
 
-    public int getTableId() {
-        return tableId;
+    public int getId() {
+        return id;
     }
 
-    public void setTableId(int tableId) {
-        this.tableId = tableId;
+    public void setId(int tableId) {
+        this.id = tableId;
     }
 
     public Integer getTablesize() {
@@ -39,18 +39,18 @@ public class Dinnertable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Dinnertable that = (Dinnertable) o;
-        return tableId == that.tableId && Objects.equals(tablesize, that.tablesize);
+        return id == that.id && Objects.equals(tablesize, that.tablesize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tableId, tablesize);
+        return Objects.hash(id, tablesize);
     }
 
     @Override
     public String toString() {
         return "Dinnertable{" +
-                "tableId=" + tableId +
+                "tableId=" + id +
                 ", tablesize=" + tablesize +
                 '}';
     }

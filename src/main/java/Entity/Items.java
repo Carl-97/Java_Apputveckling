@@ -13,7 +13,7 @@ public class Items {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ITEM_ID")
-    private int itemId;
+    private int id;
     @Basic
     @Column(name = "DESCRIPTION")
     private String description;
@@ -27,12 +27,21 @@ public class Items {
     @Column(name = "PRICE")
     private Integer price;
 
-    public int getItemId() {
-        return itemId;
+    public Items() {}
+
+    public Items(String description, String itemcategory, String name, Integer price) {
+        this.description = description;
+        this.itemcategory = itemcategory;
+        this.name = name;
+        this.price = price;
     }
 
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int itemId) {
+        this.id = itemId;
     }
 
     public String getDescription() {
@@ -72,12 +81,12 @@ public class Items {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Items items = (Items) o;
-        return itemId == items.itemId && Objects.equals(description, items.description) && Objects.equals(itemcategory, items.itemcategory) && Objects.equals(name, items.name) && Objects.equals(price, items.price);
+        return id == items.id && Objects.equals(description, items.description) && Objects.equals(itemcategory, items.itemcategory) && Objects.equals(name, items.name) && Objects.equals(price, items.price);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(itemId, description, itemcategory, name, price);
+        return Objects.hash(id, description, itemcategory, name, price);
     }
 
     @Override

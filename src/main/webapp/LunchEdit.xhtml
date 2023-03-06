@@ -6,6 +6,8 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="Hello, world"/>
+    <ui:repeat value="#{lunchInfo.allByDate}" var="lunch">
+        id:#{lunch.id} name:#{lunch.name} date:#{lunch.date}<br/>
+    </ui:repeat>
 </f:view>
 </html>

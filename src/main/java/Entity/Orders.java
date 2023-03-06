@@ -7,14 +7,14 @@ import java.util.Objects;
 @Entity
 @NamedQueries({
         @NamedQuery(name = "Orders.all", query = "SELECT e FROM Orders e"),
-        @NamedQuery(name = "Orders.byTableID", query = "SELECT e FROM Orders e WHERE e.dinnertableByTableFk.tableId = ?1"),
+        @NamedQuery(name = "Orders.byTableID", query = "SELECT e FROM Orders e WHERE e.dinnertableByTableFk.id = ?1"),
         @NamedQuery(name = "Orders.ToKitchen", query = "select e.itemsByItemFk.name, e.note from Orders e where e.itemsByItemFk.itemcategory not like 'D'")
 })
 public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ORDERS_ID")
-    private int ordersId;
+    private int id;
     @Basic
     @Column(name = "PRICE")
     private Double price;
@@ -22,8 +22,11 @@ public class Orders {
     @Column(name = "QUANTITY")
     private Integer quantity;
     @Basic
-    @Column
+    @Column(name = "NOTE")
     private String note;
+    @Basic
+    @Column(name = "READY",columnDefinition = "boolean default false")
+    private Boolean readyCheck;
 
     @ManyToOne
     @JoinColumn(name = "ITEM_FK", referencedColumnName = "ITEM_ID")
@@ -42,12 +45,12 @@ public class Orders {
         this.dinnertableByTableFk = dinnertableByTableFk;
     }
 
-    public int getOrdersId() {
-        return ordersId;
+    public int getId() {
+        return id;
     }
 
-    public void setOrdersId(int ordersId) {
-        this.ordersId = ordersId;
+    public void setId(int ordersId) {
+        this.id = ordersId;
     }
 
     public Double getPrice() {
@@ -74,17 +77,25 @@ public class Orders {
         this.note = note;
     }
 
+    public Boolean getReadyCheck() {
+        return readyCheck;
+    }
+
+    public void setReadyCheck(Boolean readyCheck) {
+        this.readyCheck = readyCheck;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Orders orders = (Orders) o;
-        return ordersId == orders.ordersId && Objects.equals(price, orders.price) && Objects.equals(quantity, orders.quantity);
+        return id == orders.id && Objects.equals(price, orders.price) && Objects.equals(quantity, orders.quantity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ordersId, price, quantity);
+        return Objects.hash(id, price, quantity);
     }
 
     public Items getItemsByItemFk() {
@@ -106,7 +117,7 @@ public class Orders {
     @Override
     public String toString() {
         return "Orders{" +
-                "ordersId=" + ordersId +
+                "ordersId=" + id +
                 ", price=" + price +
                 ", quantity=" + quantity +
                 ", note='" + note + '\'' +
