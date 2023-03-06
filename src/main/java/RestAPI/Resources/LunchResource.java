@@ -1,6 +1,6 @@
-package RestAPI.Resurces;
+package RestAPI.Resources;
 
-import Entity.Dinnertable;
+import Entity.TodaysLunch;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -13,15 +13,15 @@ import jakarta.ws.rs.core.Response;
 @Transactional(Transactional.TxType.REQUIRED)
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-@Path("/table")
-public class DinnertableResource {
+@Path("/lunch")
+public class LunchResource {
 
     @PersistenceContext
     EntityManager em;
 
     @GET
-    public Response GetAllTables(){
-        return Response.ok(em.createNamedQuery("Dinnertable.all", Dinnertable.class).getResultList()).build();
+    @Path("/week")
+    public Response getWeeksLunch() {
+        return Response.ok(em.createNamedQuery("Lunch.week", TodaysLunch.class).getResultList()).build();
     }
-
 }

@@ -1,17 +1,15 @@
-package RestAPI.Resurces;
+package RestAPI.Resources;
 
 import Entity.Items;
-import Entity.Orders;
+import RestAPI.Request.CreateItemRequest;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import jakarta.ws.rs.core.UriInfo;
 
 @ApplicationScoped
 @Transactional(Transactional.TxType.REQUIRED)
@@ -24,21 +22,24 @@ public class ItemResource {
     EntityManager em;
 
     @GET
-    public Response GetAllItems(){
+    public Response GetAllItems() {
         return Response.ok(em.createNamedQuery("Items.all", Items.class).getResultList()).build();
     }
 
     @GET
     @Path("/{category}")
-    public Response GetItemByCat(@PathParam("category") String category){
-        return Response.ok(em.createNamedQuery("Items.category", Items.class).setParameter("itemcategory", category).getResultList()).build();
+    public Response GetItemByCat(@PathParam("category") String category) {
+        return Response.ok(em.createNamedQuery("Items.category", Items.class).setParameter("itemCategory", category).getResultList()).build();
     }
 
     @POST
-    @Path("/newItem")
-    public Response CreateNewItem(@Context UriInfo uriInfo, @Valid Items item){
-        System.out.println(uriInfo);
-        System.out.println(item);
-        return Response.ok(item).build();
+    @Path("/newitem")
+    public Response CreateItem(@Valid CreateItemRequest itemRequest) {
+        if (em.find(Items.class, itemRequest.getItemId()) != null){
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+        Items items = new Items(itemRequest);
+        em.persist(items);
+        return Response.ok(itemRequest).build();
     }
 }

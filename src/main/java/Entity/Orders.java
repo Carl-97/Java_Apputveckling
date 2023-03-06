@@ -1,5 +1,6 @@
 package Entity;
 
+import RestAPI.Request.CreateOrderRequest;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -8,7 +9,7 @@ import java.util.Objects;
 @NamedQueries({
         @NamedQuery(name = "Orders.all", query = "SELECT e FROM Orders e"),
         @NamedQuery(name = "Orders.byTableID", query = "SELECT e FROM Orders e WHERE e.dinnertableByTableFk.tableId = ?1"),
-        @NamedQuery(name = "Orders.ToKitchen", query = "select e.itemsByItemFk.name, e.note from Orders e where e.itemsByItemFk.itemcategory not like 'D'")
+        @NamedQuery(name = "Orders.ToKitchen", query = "select e.itemsByItemFk.name, e.note from Orders e where e.itemsByItemFk.itemCategory not like 'D'")
 })
 public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,6 +41,14 @@ public class Orders {
         this.note = note;
         this.itemsByItemFk = itemsByItemFk;
         this.dinnertableByTableFk = dinnertableByTableFk;
+    }
+
+    public Orders(CreateOrderRequest createOrderRequest) {
+        price = createOrderRequest.getPrice();
+        quantity = createOrderRequest.getQuantity();
+        note = createOrderRequest.getNote();
+        itemsByItemFk = createOrderRequest.getItemsByItemFk();
+        dinnertableByTableFk = createOrderRequest.getDinnertableByTableFk();
     }
 
     public int getOrdersId() {

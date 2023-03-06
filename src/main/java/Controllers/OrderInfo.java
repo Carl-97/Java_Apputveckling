@@ -23,6 +23,6 @@ public class OrderInfo {
     }
 
     public List<Orders> getOrderItems() {
-        return em.createNamedQuery("Orders.byItems", Orders.class).setParameter(1,5).getResultList();
+        return em.createNamedQuery("Orders.byTableID", Orders.class).setParameter(1,5).getResultList();
     }
 }

@@ -6,10 +6,10 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
-@NamedQuery(
-        name = "getTodayLunch",
-        query = "SELECT e FROM TodaysLunch e WHERE e.date = CURRENT_DATE"
-)
+@NamedQueries({
+        @NamedQuery(name = "getTodayLunch", query = "SELECT e FROM TodaysLunch e WHERE e.date = CURRENT_DATE"),
+        @NamedQuery(name = "Lunch.week", query = "SELECT e FROM TodaysLunch e")
+})
 public class TodaysLunch {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
