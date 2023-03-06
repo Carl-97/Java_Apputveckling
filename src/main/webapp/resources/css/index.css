@@ -40,21 +40,28 @@ body{
   padding: 20px 20px;
   height: 550px;
   width: 100%;
+
 }
 .menu-container{
   display: grid;
   height: 500px;
   width: 100%;
-  margin: auto 0;
-  padding: 0 20px 20px 20px;
-  grid-template-columns: 600px auto 20px;
+
+
+  grid-template-columns: 650px auto 20px;
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
+
+
+  margin: 0px auto;
+
 }
 .menu-card{
   background-color: #fcfcf8;
   box-shadow: 5px 8px 10px hsla(0,0%,0%,0.16);
   padding: 15px 0 ;
-  margin: 30px 20px 0 20px;
+  margin: 30px 20px 0 0px;
   height: 500px;
   border-radius: 10px;
 }
