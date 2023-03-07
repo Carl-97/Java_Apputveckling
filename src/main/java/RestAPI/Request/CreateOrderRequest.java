@@ -20,12 +20,12 @@ public class CreateOrderRequest {
         this.dinnertableByTableFk = dinnertableByTableFk;
     }
 
-    public Double getPrice() {
-        return price;
-    }
-
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Double getPrice() {
+        return price;
     }
 
     public Integer getQuantity() {

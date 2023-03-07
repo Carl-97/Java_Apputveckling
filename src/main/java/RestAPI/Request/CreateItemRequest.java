@@ -1,14 +1,10 @@
 package RestAPI.Request;
 
-import java.util.Objects;
-
 public class CreateItemRequest {
 
-    private int itemId;
     private String description;
     private String itemCategory;
     private String name;
-
     private Integer price;
 
     public CreateItemRequest(){}
@@ -19,14 +15,6 @@ public class CreateItemRequest {
         this.price = price;
     }
 
-    public int getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -34,7 +22,6 @@ public class CreateItemRequest {
     public void setDescription(String description) {
         this.description = description;
     }
-
     public String getItemCategory() {
         return itemCategory;
     }
@@ -42,7 +29,6 @@ public class CreateItemRequest {
     public void setItemCategory(String itemCategory) {
         this.itemCategory = itemCategory;
     }
-
     public String getName() {
         return name;
     }
@@ -57,21 +43,5 @@ public class CreateItemRequest {
 
     public void setPrice(Integer price) {
         this.price = price;
-    }
-
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(itemId, description, itemCategory, name, price);
-    }
-
-    @Override
-    public String toString() {
-        return "Items{" +
-                "description='" + description + '\'' +
-                ", itemcategory='" + itemCategory + '\'' +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                '}';
     }
 }

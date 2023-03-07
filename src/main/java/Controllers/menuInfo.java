@@ -25,11 +25,7 @@ public class menuInfo {
     }
 
     public List<Items> getItemByCategory(String category) {
-        return em.createNamedQuery("Items.category", Items.class).setParameter("itemcategory", category).getResultList();
+        return em.createNamedQuery("Items.category", Items.class).setParameter("itemCategory", category).getResultList();
     }
 
-    public void createNewItem(String description, String itemcategory, String name, Integer price) {
-        Items item = new Items(description, itemcategory, name, price);
-        em.persist(item);
-    }
 }

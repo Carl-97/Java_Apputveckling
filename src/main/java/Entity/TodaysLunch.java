@@ -7,7 +7,7 @@ import java.util.Objects;
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "getTodayLunch", query = "SELECT e FROM TodaysLunch e WHERE e.date = CURRENT_DATE"),
+        @NamedQuery(name = "Lunch.today", query = "SELECT e FROM TodaysLunch e WHERE e.date = CURRENT_DATE"),
         @NamedQuery(name = "Lunch.week", query = "SELECT e FROM TodaysLunch e")
 })
 public class TodaysLunch {

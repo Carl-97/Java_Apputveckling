@@ -20,7 +20,7 @@ public class DinnertableResource {
     EntityManager em;
 
     @GET
-    public Response GetAllTables(){
+    public Response getAllTables(){
         return Response.ok(em.createNamedQuery("Dinnertable.all", Dinnertable.class).getResultList()).build();
     }
 

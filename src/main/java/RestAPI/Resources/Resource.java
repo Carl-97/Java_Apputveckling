@@ -31,7 +31,7 @@ public class Resource {
     @Path("/week")
     public Response GetTodaysLunch(){
 
-        return Response.ok(em.createNamedQuery("getTodayLunch", TodaysLunch.class).getResultList()).build();
+        return Response.ok(em.createNamedQuery("Lunch.today", TodaysLunch.class).getResultList()).build();
     }
 
     @GET
