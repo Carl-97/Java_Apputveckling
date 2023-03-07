@@ -7,7 +7,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
-import java.sql.Date;
+import java.util.Date;
 import java.time.LocalDate;
 import java.util.List;
 import java.text.SimpleDateFormat;
