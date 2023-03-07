@@ -1,6 +1,7 @@
 package RestAPI.Resources;
 
 import Entity.Orders;
+import RestAPI.Request.CreateItemRequest;
 import RestAPI.Request.CreateOrderRequest;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
@@ -10,6 +11,9 @@ import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @ApplicationScoped
 @Transactional(Transactional.TxType.REQUIRED)
@@ -39,5 +43,19 @@ public class OrderResource {
         Orders order = new Orders(createOrderRequest);
         em.persist(order);
         return Response.ok(order).build();
+    }
+
+    @POST
+    @Path("newOrders")
+    public Response createNewOrders(@Valid List<CreateOrderRequest> orderRequestList) {
+        List<Orders> orderList = new ArrayList<>();
+        for(CreateOrderRequest orderRequest: orderRequestList) {
+            Orders order = new Orders(orderRequest);
+            orderList.add(order);
+
+            em.persist(order);
+        }
+
+        return Response.ok(orderList).build();
     }
 }
