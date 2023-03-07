@@ -14,11 +14,14 @@
          <label for="price">Price:</label>
          <h:inputText id="price" value="#{lunchInfo.price}" />
 
-         <label for="id">ID:</label>
-         <h:inputText id="id" value="#{lunchInfo.id}" />
+         <label for="des">Description:</label>
+         <h:inputText id="des" value="#{lunchInfo.description}" />
+
 
          <label for="date">Date:</label>
-         <h:inputText id="date" value="#{lunchInfo.date}" />
+         <h:inputText type = "date" id="date" name="date" value="#{lunchInfo.date}" required="true" >
+            <f:convertDateTime dateStyle="short" pattern="yyyy-mm-dd"/>
+         </h:inputText>
       </div>
 
 

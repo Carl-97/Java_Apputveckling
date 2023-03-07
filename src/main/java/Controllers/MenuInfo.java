@@ -69,7 +69,9 @@ public class MenuInfo {
 
     public void delete() {
         Items item = em.find(Items.class, id);
-        em.remove(item);
+        if(item != null) {
+            em.remove(item);
+        }
     }
 
     public void update() {
