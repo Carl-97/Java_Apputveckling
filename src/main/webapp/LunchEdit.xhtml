@@ -30,6 +30,7 @@
 
                 <label for="date">Date:</label>
                 <h:inputText type="date" id="date" name="date" value="#{lunchInfo.date}" required="true" >
+                    <f:convertDateTime dateStyle="short" pattern="yyyy-mm-dd"/>
 
                 </h:inputText>
 
@@ -44,13 +45,8 @@
 
 
 </h:panelGroup>
-
 <ui:repeat value="#{lunchInfo.allByDate}" var="lunch">
-    <div class="out-text">
-        <label class="label-id">id:</label> #{lunch.id}
-        <label class="label-name">name:</label> #{lunch.name}
-        <label class="label-date">date:</label>#{lunch.date}<br/>
-    </div>
+    id:#{lunch.id} name:#{lunch.name} date:#{lunch.date}<br/>
 </ui:repeat>
 
 </html>
