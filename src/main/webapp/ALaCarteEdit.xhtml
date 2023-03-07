@@ -18,7 +18,7 @@
             <h:inputText type="text" id="description" name="description" value="#{menuInfo.description}" required="true" />
 
             <label for="price">Price:</label>
-            <h:inputText type="price" id="price" name="price" value="#{menuInfo.price}" required="true"/>
+            <h:inputText id="price" name="price" value="#{menuInfo.price}" required="true"/>
 
             <label for="category">Category:</label>
             <h:selectOneMenu id="category" name="category" value="#{menuInfo.itemCategory}" required="true" styleClass="empty-option" >
@@ -30,8 +30,6 @@
             </h:selectOneMenu>
             <h:commandButton action="#{menuInfo.insert()}" actionListener="Succeed" update="message" type="submit" value="Submit" />
             <h:outputText value="" />
-
-
         </h:form>
         <h:form>
             <label for="item_id">Item id:</label>
