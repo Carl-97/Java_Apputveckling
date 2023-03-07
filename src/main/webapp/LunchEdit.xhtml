@@ -5,9 +5,92 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
+<h:head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antons Skafferi</title>
+    <h:outputStylesheet library="css" name="LunchEdit.css" />
+</h:head>
+
+
+
+<h:panelGroup styleClass="wrapper-edit">
+        <div class="card-edit">
+                <p class="lunchedit-tittle">Veckan Lunch</p>
+
+            <h:panelGroup styleClass="menu-day">Måndag</h:panelGroup>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Måndag'][0]}" />
+            </ui:include>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Måndag'][1]}" />
+            </ui:include>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Måndag'][2]}" />
+            </ui:include> <br></br>
+
+            <h:panelGroup styleClass="menu-day">Tisdag</h:panelGroup>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Tisdag'][0]}" />
+            </ui:include>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Tisdag'][1]}" />
+            </ui:include>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Tisdag'][2]}" />
+            </ui:include> <br></br>
+
+
+
+            <h:panelGroup styleClass="menu-day">Onsdag</h:panelGroup>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Onsdag'][0]}" />
+            </ui:include>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Onsdag'][1]}" />
+            </ui:include>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Onsdag'][2]}" />
+            </ui:include> <br></br>
+
+            <h:panelGroup styleClass="menu-day">Torsdag</h:panelGroup>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Torsdag'][0]}" />
+            </ui:include>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Torsdag'][1]}" />
+            </ui:include>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Torsdag'][2]}" />
+            </ui:include> <br></br>
+
+            <h:panelGroup styleClass="menu-day">Fredag</h:panelGroup>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Fredag'][0]}" />
+            </ui:include>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Fredag'][1]}" />
+            </ui:include>
+            <ui:include src="inputlunch.xhtml">
+                <ui:param name="meal" value="#{lunchInfo.allByDate['Fredag'][2]}" />
+            </ui:include><br></br>
+
+            <h:panelGroup>
+                <h:commandButton action="#{lunchInfo.submit}"
+                                 value="Submit"
+                                 styleClass="brand-submit-button" />
+            </h:panelGroup>
+
+
+        </div>
+
+
+
+</h:panelGroup>
+
+
     <ui:repeat value="#{lunchInfo.allByDate}" var="lunch">
         id:#{lunch.id} name:#{lunch.name} date:#{lunch.date}<br/>
     </ui:repeat>
-</f:view>
+
 </html>
