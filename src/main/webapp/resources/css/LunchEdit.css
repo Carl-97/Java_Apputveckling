@@ -95,3 +95,19 @@ input[type="submit"] {
     padding: 10px;
     font-size: 16px;
 }
+
+.menu-course{
+
+    text-align: start;
+    font-weight: 250;
+    font-style: inherit;
+    margin-left: 20px;
+    font-size: 18px;
+    margin-bottom: 1em;
+
+}
+.menu-price {
+    float: right;
+    font-weight: inherit;
+    margin-right: 15px;
+}

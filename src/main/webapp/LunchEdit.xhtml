@@ -31,7 +31,7 @@
 
                 <label for="date">Date:</label>
                 <h:inputText type="date" id="date" name="date" value="#{lunchInfo.date}" required="true" >
-                    <f:convertDateTime dateStyle="short" pattern="yyyy-mm-dd"/>
+                    <f:convertDateTime pattern="yyyy-MM-dd" />
 
                 </h:inputText>
 
@@ -42,8 +42,47 @@
     </div>
 
 
+    <div class="card-edit">
+        <ui:repeat value="#{lunchInfo.allByDate}" var="lunch">
+            <li class="menu-course">
+            <h:outputText value="#{lunch.date}">
+                <f:convertDateTime pattern="EEE, yyyy-MM-dd : "/>
+            </h:outputText>  #{lunch.name}
+            <span class="menu-price">#{lunch.price} kr</span>
+        </li>
+
+        </ui:repeat>
+
+
+    </div>
+
+    <div class="card-edit">
+        <h:dataTable value="#{lunchInfo.allByDate}" var="lunch">
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                #{lunch.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                #{lunch.name}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Date</f:facet>
+                <h:outputText value="#{lunch.date}">
+                    <f:convertDateTime pattern="EEE, yyyy-MM-dd"/>
+                </h:outputText>
+            </h:column>
+        </h:dataTable>
+
+    </div>
+
+
+
+
 
 </h:panelGroup>
+
+
 
 <ui:repeat value="#{lunchInfo.allByDate}" var="lunch">
     id:#{lunch.id} name:#{lunch.name} date:#{lunch.date}<br/>

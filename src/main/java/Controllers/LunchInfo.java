@@ -13,6 +13,8 @@ import java.util.Date;
 import java.util.List;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.text.SimpleDateFormat;
+
 
 @Named
 @RequestScoped
@@ -109,6 +111,10 @@ public class LunchInfo {
         int week = cal.get(Calendar.WEEK_OF_YEAR);
         return Integer.toString(week);
     }
+
+
+
+
 
 
 
