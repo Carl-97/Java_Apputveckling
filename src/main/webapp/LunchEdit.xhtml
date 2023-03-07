@@ -12,14 +12,13 @@
     <h:outputStylesheet library="css" name="LunchEdit.css" />
 </h:head>
 
-
-
 <h:panelGroup styleClass="wrapper-edit">
     <div class="card-edit">
-                <p class="lunchedit-tittle">Veckan Lunch</p>
+        <p class="lunchedit-tittle">Veckan Lunch</p>
         <div class="form-wrapper">
 
             <h:form >
+
                 <label for="name">Name:</label>
                 <h:inputText id="name" value="#{lunchInfo.name}" required="true" />
 
@@ -31,12 +30,14 @@
 
                 <label for="date">Date:</label>
                 <h:inputText type="date" id="date" name="date" value="#{lunchInfo.date}" required="true" >
-                    <f:convertDateTime dateStyle="short" pattern="yyyy-mm-dd"/>
+
                 </h:inputText>
 
                 <h:commandButton action="#{lunchInfo.insert()}" actionListener="Succeed" update="message" type="submit" value="Submit" />
                 <h:outputText value="" />
             </h:form>
+
+
         </div>
     </div>
 
@@ -44,9 +45,12 @@
 
 </h:panelGroup>
 
-
-    <ui:repeat value="#{lunchInfo.allByDate}" var="lunch">
-        id:#{lunch.id} name:#{lunch.name} date:#{lunch.date}<br/>
-    </ui:repeat>
+<ui:repeat value="#{lunchInfo.allByDate}" var="lunch">
+    <div class="out-text">
+        <label class="label-id">id:</label> #{lunch.id}
+        <label class="label-id">name:</label> #{lunch.name}
+        <label class="label-id">date:</label>#{lunch.date}<br/>
+    </div>
+</ui:repeat>
 
 </html>
