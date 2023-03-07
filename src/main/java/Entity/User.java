@@ -20,6 +20,14 @@ public class User {
     @Column(name = "ADMIN", columnDefinition = "false")
     private Boolean admin;
 
+    public User() {}
+
+    public User(String username, String password, Boolean admin) {
+        this.username = username;
+        this.password = password;
+        this.admin = admin;
+    }
+
     public int getId() {
         return id;
     }
