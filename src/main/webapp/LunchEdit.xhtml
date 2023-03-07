@@ -32,10 +32,7 @@
                 <label for="date">Date:</label>
                 <h:inputText type="date" id="date" name="date" value="#{lunchInfo.date}" required="true" >
                     <f:convertDateTime dateStyle="short" pattern="yyyy-mm-dd"/>
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 102527c (Update LunchEdit.xhtml)
                 </h:inputText>
 
                 <h:commandButton action="#{lunchInfo.insert()}" actionListener="Succeed" update="message" type="submit" value="Submit" />
@@ -47,16 +44,11 @@
 
 
 </h:panelGroup>
-<<<<<<< HEAD
+
 <ui:repeat value="#{lunchInfo.allByDate}" var="lunch">
     id:#{lunch.id} name:#{lunch.name} date:#{lunch.date}<br/>
 </ui:repeat>
-=======
 
 
-    <ui:repeat value="#{lunchInfo.allByDate}" var="lunch">
-        id:#{lunch.id} name:#{lunch.name} date:#{lunch.date}<br/>
-    </ui:repeat>
->>>>>>> parent of 102527c (Update LunchEdit.xhtml)
 
 </html>
