@@ -2,7 +2,7 @@ package Entity;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.Objects;
 
 @Entity

@@ -17,73 +17,30 @@
 <h:panelGroup styleClass="wrapper-edit">
         <div class="card-edit">
                 <p class="lunchedit-tittle">Veckan Lunch</p>
+    <div class="form-wrapper">
 
-            <h:panelGroup styleClass="menu-day">Måndag</h:panelGroup>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Måndag'][0]}" />
-            </ui:include>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Måndag'][1]}" />
-            </ui:include>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Måndag'][2]}" />
-            </ui:include> <br></br>
+            <h:form >
 
-            <h:panelGroup styleClass="menu-day">Tisdag</h:panelGroup>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Tisdag'][0]}" />
-            </ui:include>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Tisdag'][1]}" />
-            </ui:include>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Tisdag'][2]}" />
-            </ui:include> <br></br>
+                <label for="name">Name:</label>
+                <h:inputText id="name" value="#{lunchInfo.name}" required="true" />
 
+                <label for="description">Description:</label>
+                <h:inputText type="text" id="description" name="description" value="#{lunchInfo.description}" required="true" />
+
+                <label for="price">Price:</label>
+                <h:inputText id="price" name="price" value="#{lunchInfo.price}" required="true"/>
+
+                <label for="date">Date:</label>
+                <h:inputText type="date" id="date" name="date" value="#{lunchInfo.date}" required="true" >
+
+                </h:inputText>
+
+                <h:commandButton action="#{lunchInfo.insert()}" actionListener="Succeed" update="message" type="submit" value="Submit" />
+                <h:outputText value="" />
+            </h:form>
 
 
-            <h:panelGroup styleClass="menu-day">Onsdag</h:panelGroup>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Onsdag'][0]}" />
-            </ui:include>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Onsdag'][1]}" />
-            </ui:include>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Onsdag'][2]}" />
-            </ui:include> <br></br>
-
-            <h:panelGroup styleClass="menu-day">Torsdag</h:panelGroup>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Torsdag'][0]}" />
-            </ui:include>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Torsdag'][1]}" />
-            </ui:include>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Torsdag'][2]}" />
-            </ui:include> <br></br>
-
-            <h:panelGroup styleClass="menu-day">Fredag</h:panelGroup>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Fredag'][0]}" />
-            </ui:include>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Fredag'][1]}" />
-            </ui:include>
-            <ui:include src="inputlunch.xhtml">
-                <ui:param name="meal" value="#{lunchInfo.allByDate['Fredag'][2]}" />
-            </ui:include><br></br>
-
-            <h:panelGroup>
-                <c:forEach var ="item" items="#{lunchInfo.allByDate}">
-                <h:commandButton action="#{lunchInfo.insert()}"
-                                 value="Submit"
-                                 styleClass="brand-submit-button" />
-                </c:forEach>
-            </h:panelGroup>
-
-
+        </div>
         </div>
 
 
