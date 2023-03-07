@@ -74,7 +74,9 @@ public class LunchInfo {
 
     public void delete() {
         TodaysLunch lunch = em.find(TodaysLunch.class, id);
-        em.remove(lunch);
+        if(lunch != null) {
+            em.remove(lunch);
+        }
     }
 
     public List<TodaysLunch> getTodaysLunch() {

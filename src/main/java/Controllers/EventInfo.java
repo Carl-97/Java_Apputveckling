@@ -51,7 +51,9 @@ public class EventInfo {
 
     public void delete() {
         Event event = em.find(Event.class, id);
-        em.remove(event);
+        if(event != null) {
+            em.remove(event);
+        }
     }
 
     public List<Event> getEventInfo() {
