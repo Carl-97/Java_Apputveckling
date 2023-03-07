@@ -1,6 +1,7 @@
 package Entity;
 
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 
 import java.sql.Date;
 import java.util.Objects;

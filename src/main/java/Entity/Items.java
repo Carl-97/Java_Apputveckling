@@ -2,6 +2,7 @@ package Entity;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
@@ -9,7 +10,7 @@ import java.util.Objects;
         @NamedQuery(name = "Items.all", query = "SELECT e FROM Items e"),
         @NamedQuery(name = "Items.category", query = "SELECT e FROM Items e WHERE e.itemcategory = :itemcategory")
 })
-public class Items {
+public class Items implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ITEM_ID")

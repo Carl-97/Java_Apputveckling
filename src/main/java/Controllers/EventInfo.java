@@ -5,12 +5,14 @@ import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 
 import java.sql.Date;
 import java.util.List;
 
 @Named
 @RequestScoped
+@Transactional(Transactional.TxType.REQUIRED)
 public class EventInfo {
 
     private String description;

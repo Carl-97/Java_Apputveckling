@@ -1,8 +1,10 @@
 package Entity;
 
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 
-import java.sql.Date;
+import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -13,7 +15,7 @@ import java.util.Objects;
         @NamedQuery(name = "Lunch.allOrderByDate", query = "SELECT e FROM TodaysLunch e ORDER BY e.date ASC")
 }
 )
-public class TodaysLunch {
+public class TodaysLunch implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "LUNCH_ID")
@@ -23,6 +25,7 @@ public class TodaysLunch {
     private String desc;
     @Basic
     @Column(name = "DATE")
+    @Temporal(TemporalType.DATE)
     private Date date;
     @Basic
     @Column(name = "NAME")

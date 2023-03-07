@@ -6,17 +6,17 @@ import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
 
-import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
-import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
-import java.util.Locale;
 
 @Named
 @RequestScoped
+@Transactional(Transactional.TxType.REQUIRED)
 public class LunchInfo {
 
     private int id;

@@ -15,12 +15,11 @@
 
 
 <h:panelGroup styleClass="wrapper-edit">
-        <div class="card-edit">
+    <div class="card-edit">
                 <p class="lunchedit-tittle">Veckan Lunch</p>
-    <div class="form-wrapper">
+        <div class="form-wrapper">
 
             <h:form >
-
                 <label for="name">Name:</label>
                 <h:inputText id="name" value="#{lunchInfo.name}" required="true" />
 
@@ -32,16 +31,14 @@
 
                 <label for="date">Date:</label>
                 <h:inputText type="date" id="date" name="date" value="#{lunchInfo.date}" required="true" >
-
+                    <f:convertDateTime dateStyle="short" pattern="yyyy-mm-dd"/>
                 </h:inputText>
 
                 <h:commandButton action="#{lunchInfo.insert()}" actionListener="Succeed" update="message" type="submit" value="Submit" />
                 <h:outputText value="" />
             </h:form>
-
-
         </div>
-        </div>
+    </div>
 
 
 

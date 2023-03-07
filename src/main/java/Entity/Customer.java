@@ -23,6 +23,7 @@ public class Customer implements Serializable {
     private Integer sizeofgroup;
     @Basic
     @Column(name = "DATE")
+    @Temporal(TemporalType.DATE)
     private Date date;
     @Basic
     @Column(name = "TIME")
