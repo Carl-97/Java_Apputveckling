@@ -1,0 +1,181 @@
+
+
+body{
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to bottom, #f3f3f3,#f4f4f4);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+
+.header{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 10px;
+
+  display: block;
+  padding-bottom: 10px;
+
+}
+
+
+.wrapper-reservation{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D3D3D3;
+  padding: 20px 20px;
+  height: 550px;
+  width: 100%;
+
+}
+
+
+.card-reservation{
+  display: block;
+
+  height: 500px;
+  overflow: hidden;
+  background-color: #fcfcf8;
+  box-shadow: 5px 8px 10px hsla(0,0%,0%,0.16);
+  padding: 0px 140px 10px 50px;
+  margin-left: 20px;
+  grid-auto-flow: dense;
+  border-radius: 10px;
+  text-align: center;
+
+}
+
+.res-tittle{
+  text-align: center;
+  font-weight: 510;
+  font-style: normal;
+  font-family: Imprint MT Shadow, serif;
+  padding-top: 10px;
+  font-size: 30px;
+}
+
+
+
+
+
+
+.image-reservation{
+
+  margin-left: -60px;
+  height: 500px;
+
+  padding: 0 20px;
+  grid-template-columns: auto 700px;
+
+  box-shadow: 5px 8px 10px hsla(0,0%,0%,0.01);
+  border-radius: 25px;
+}
+form {
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  position: relative;
+
+}
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65%;
+}
+label {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+  font-weight: normal;
+}
+input {
+  padding: 5px;
+  font-size: 16px;
+}
+input[type="submit"] {
+  position: absolute;
+  right: 0px;
+  bottom: -50px;
+}
+select#time {
+  background-color: white;
+  color: black;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+
+  font-size: 16px;
+
+}
+label[for="time"], select#time {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.empty-option {
+  background-color: white;
+  color: black;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+}
+.wrapper2{
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D3D3D3;
+  padding: 20px 20px;
+  height: 250px;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0 auto;
+
+}
+
+
+
+.contact-info{
+  width: 100%;
+  text-align: left;
+  font-weight: 250;
+  font-style: inherit;
+  margin-left: 20px;
+  font-size: 18px;
+}
+.address {
+  width: 100%;
+  text-align: center;
+  font-weight: 250;
+  font-style: inherit;
+  margin-left: 20px;
+  font-size: 18px;
+}
+.hours {
+  width: 100%;
+  text-align: right;
+  font-weight: 250;
+  font-style: inherit;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.footer-container > * {
+  margin: 1em;
+}

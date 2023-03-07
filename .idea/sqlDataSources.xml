@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="24e0a043-9911-4c51-aa1d-396588fea5d1" name="DDL Mapping">
+      <data-sources db="f074face-ab07-4387-bd9b-1340cf424c83" ddl="d55c75af-147d-47f5-a4fa-948c76d027da" />
+      <scope>
+        <node kind="database" qname="@" />
+      </scope>
+    </mapping>
+  </component>
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="d55c75af-147d-47f5-a4fa-948c76d027da" />
+          <option name="name" value="DDL data source" />
+          <option name="dbmsName" value="DERBY" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$/src/main/resources/DDL" />
+              <option value="file://$PROJECT_DIR$/src/main/resources/DDL/APP/Dinnertable.sql" />
+            </array>
+          </option>
+          <option name="outLayout" value="File per object by schema.groovy" />
+        </State>
+      </list>
+    </option>
+  </component>
+</project>

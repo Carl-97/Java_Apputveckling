@@ -1,0 +1,87 @@
+.header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 5px;
+    display: block;
+    padding-bottom: 5px;
+    box-shadow: 5px 8px 10px hsla(0,0%,0%, 0.08);
+    text-align: center;
+}
+
+.headerimg {
+    display: inline-block;
+    margin: 0 auto;
+}
+.header-title{
+
+}
+.wrapper1{
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D3D3D3;
+    padding: 20px 20px;
+    height: 550px;
+    width: 100%;
+
+}
+.admin-container {
+    display: grid;
+    grid-template-columns: 100% 600px auto 20px;
+    height: 500px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding: 0 20px 20px 20px;
+    grid-auto-flow: dense;
+    width: 100%;
+
+}
+
+.admin-card{
+    background-color: #fcfcf8;
+    box-shadow: 5px 8px 10px hsla(0,0%,0%,0.16);
+    padding: 15px 0 ;
+    margin: 30px 20px 0 20px;
+    height: 500px;
+    border-radius: 10px;
+
+}
+
+.admin-tittle{
+    text-align: center;
+    font-weight: 510;
+    font-style: normal;
+    font-family: Imprint MT Shadow, serif;
+    padding-top: 25px;
+    font-size: 50px;
+}
+
+
+.menu-items{
+    margin-bottom: 1em;
+
+}
+.list-items{
+    font-size: 30px;
+    font-weight: 550;
+    font-style: italic;
+    font-family: serif;
+}
+.admin-image{
+
+
+    height: 500px;
+    margin-left: 20px;
+    margin-right: -30px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    grid-template-columns: auto 700px;
+
+    box-shadow: 5px 8px 10px hsla(0,0%,0%,0.01);
+    border-radius: 25px;
+}
