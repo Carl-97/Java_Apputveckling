@@ -7,6 +7,8 @@ body{
     overflow-x: hidden;
 }
 
+
+
 .wrapper-edit{
     margin: auto;
     display: flex;
@@ -19,18 +21,6 @@ body{
 
 }
 
-.out-text {
-    font-size: 18px;
-    padding: 10px 10px;
-}
-
-.label-id, .label-name, .label-date {
-    display: inline-block;
-    padding-left: 5px;
-    padding-right: 10px;
-    font-size: 20px;
-    font-weight: bolder;
-}
 
 .card-edit{
     display: block;
@@ -56,6 +46,12 @@ body{
     font-size: 30px;
 }
 
+
+
+
+
+
+
 form {
 
     flex-direction: column;
@@ -67,14 +63,12 @@ form {
     position: relative;
 
 }
-
 .form-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 65%;
 }
-
 label {
     display: flex;
     justify-content: flex-end;
@@ -91,6 +85,8 @@ input[type="submit"] {
     right: 0px;
     bottom: -50px;
 }
+
+
 
 .empty-option {
     background-color: white;
