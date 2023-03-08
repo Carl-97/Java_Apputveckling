@@ -8,6 +8,7 @@ import java.util.Objects;
 @Entity
 @NamedQueries({
         @NamedQuery(name = "Orders.all", query = "SELECT e FROM Orders e"),
+        @NamedQuery(name = "Orders.byOrdersID", query = "SELECT e FROM Orders e WHERE e.ordersId = ?1"),
         @NamedQuery(name = "Orders.byTableID", query = "SELECT e FROM Orders e WHERE e.dinnertableByTableFk.tableId = ?1"),
         @NamedQuery(name = "Orders.ToKitchen", query = "select e.itemsByItemFk.name, e.note from Orders e where e.itemsByItemFk.itemCategory not like 'D'")
 })
@@ -24,7 +25,10 @@ public class Orders {
     private Integer quantity;
     @Basic
     @Column
-    private String note;
+    private String note = "";
+    @Basic
+    @Column
+    private boolean cooked = false;
 
     @ManyToOne
     @JoinColumn(name = "ITEM_FK", referencedColumnName = "ITEM_ID")
@@ -79,6 +83,14 @@ public class Orders {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public boolean isCooked() {
+        return cooked;
+    }
+
+    public void setCooked(boolean hasBeenCooked) {
+        this.cooked = hasBeenCooked;
     }
 
     @Override

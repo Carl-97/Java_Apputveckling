@@ -43,6 +43,17 @@ public class OrderResource {
     }
 
     @POST
+    @Path("/kitchen/{ID}")
+    public Response setOrderToReady(@PathParam("ID") Integer ID) {
+        Orders order = em.find(Orders.class, ID);
+        if(order == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        order.setCooked(true);
+        return Response.ok(order).build();
+    }
+
+    @POST
     public Response createNewOrder(@Valid List<CreateOrderRequest> createOrderRequestList){
         List<Orders> responseList = new ArrayList<>();
         for(CreateOrderRequest orderRequest: createOrderRequestList) {
@@ -54,6 +65,7 @@ public class OrderResource {
 
         return Response.ok(responseList).build();
     }
+
     @DELETE
     @Path("/{id}")
     public Response deleteItems(@PathParam("id") Integer ID){
