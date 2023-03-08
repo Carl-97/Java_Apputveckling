@@ -12,6 +12,9 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @ApplicationScoped
 @Transactional(Transactional.TxType.REQUIRED)
 @Consumes(MediaType.APPLICATION_JSON)
@@ -21,6 +24,11 @@ public class OrderResource {
 
     @PersistenceContext
     EntityManager em;
+
+    @GET
+    public Response getAllOrders() {
+        return Response.ok(em.createNamedQuery("Orders.all", Orders.class).getResultList()).build();
+    }
 
     @GET
     @Path("{ID}")
@@ -35,10 +43,16 @@ public class OrderResource {
     }
 
     @POST
-    public Response createNewOrder(@Valid CreateOrderRequest createOrderRequest){
-        Orders order = new Orders(createOrderRequest);
-        em.persist(order);
-        return Response.ok(order).build();
+    public Response createNewOrder(@Valid List<CreateOrderRequest> createOrderRequestList){
+        List<Orders> responseList = new ArrayList<>();
+        for(CreateOrderRequest orderRequest: createOrderRequestList) {
+            Orders order = new Orders(orderRequest);
+            em.persist(order);
+
+            responseList.add(order);
+        }
+
+        return Response.ok(responseList).build();
     }
     @DELETE
     @Path("/{id}")

@@ -12,9 +12,7 @@ public class CreateOrderRequest {
     private Dinnertable dinnertableByTableFk;
 
     public CreateOrderRequest(){};
-    public CreateOrderRequest(Double price, Integer quantity, String note, Items itemsByItemFk, Dinnertable dinnertableByTableFk) {
-        this.price = price;
-        this.quantity = quantity;
+    public CreateOrderRequest(String note, Items itemsByItemFk, Dinnertable dinnertableByTableFk) {
         this.note = note;
         this.itemsByItemFk = itemsByItemFk;
         this.dinnertableByTableFk = dinnertableByTableFk;

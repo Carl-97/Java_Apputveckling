@@ -44,8 +44,6 @@ public class Orders {
     }
 
     public Orders(CreateOrderRequest createOrderRequest) {
-        price = createOrderRequest.getPrice();
-        quantity = createOrderRequest.getQuantity();
         note = createOrderRequest.getNote();
         itemsByItemFk = createOrderRequest.getItemsByItemFk();
         dinnertableByTableFk = createOrderRequest.getDinnertableByTableFk();
