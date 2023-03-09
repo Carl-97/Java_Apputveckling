@@ -14,36 +14,52 @@
 </h:head>
 
 <h:body>
-    <div class="form-wrapper">
-        <h:form >
-            <ui:repeat value="#{menuInfo.allItems}" var="value">
-                #{value.id}   #{value.name}<br/>
-            </ui:repeat>
-            <label for="name">Name:</label>
-            <h:inputText id="name" value="#{menuInfo.name}" required="true" />
 
-            <label for="description">Description:</label>
-            <h:inputText type="text" id="description" name="description" value="#{menuInfo.description}" required="true" />
+    <h:panelGroup styleClass="wrapper-edit">
+        <div class="card-edit">
+            <p class="lacarteedit-tittle">La Carte Meny </p>
 
-            <label for="price">Price:</label>
-            <h:inputText id="price" name="price" value="#{menuInfo.price}" required="true"/>
+            <h:form >
+                <ui:repeat value="#{menuInfo.allItems}" var="value">
+                    <li  Class="menu-course" >#{value.id} <span class="menu-price"> #{value.name}</span>
+                    </li>
+                </ui:repeat>
 
-            <label for="category">Category:</label>
-            <h:selectOneMenu id="category" name="category" value="#{menuInfo.itemCategory}" required="true" styleClass="empty-option" >
-                <f:selectItem itemValue="" itemLabel=" Select a Category " />
-                <f:selectItem itemValue="F" itemLabel="Förrätt"/>
-                <f:selectItem itemValue="V" itemLabel="Varmrätt"/>
-                <f:selectItem itemValue="E" itemLabel="Efterrätt"/>
-                <f:selectItem itemValue="D" itemLabel="Dryck"/>
-            </h:selectOneMenu>
-            <h:commandButton action="#{menuInfo.insert()}" actionListener="Succeed" update="message" type="submit" value="Submit" />
-            <h:outputText value="" />
-        </h:form>
-        <h:form>
-            <label for="item_id">Item id:</label>
-            <h:inputText type="Integer" id="item_id" name="item_id" value="#{menuInfo.id}" required="true"/>
-            <h:commandButton action="#{menuInfo.delete()}" actionListener="Succeed" update="message" type="submit" value="Delete" />
-        </h:form>
-    </div>
+            </h:form>
+        </div>
+
+        <div class="card1-edit">
+                <p class="lacarteedit-tittle">La Carte Meny</p>
+                <div class="form-wrapper">
+                        <h:form >
+                            <label for="name">Name:</label>
+                            <h:inputText id="name" value="#{menuInfo.name}" required="true" />
+                            <label for="description">Description:</label>
+                            <h:inputText type="text" id="description" name="description" value="#{menuInfo.description}" required="true" />
+                            <label for="price">Price:</label>
+                            <h:inputText id="price" name="price" value="#{menuInfo.price}" required="true"/>
+                            <label for="category">Category:</label>
+                            <h:selectOneMenu id="category" name="category" value="#{menuInfo.itemCategory}" required="true" styleClass="empty-option" >
+                                <f:selectItem itemValue="" itemLabel=" Select a Category " />
+                                <f:selectItem itemValue="F" itemLabel="Förrätt"/>
+                                <f:selectItem itemValue="V" itemLabel="Varmrätt"/>
+                                <f:selectItem itemValue="E" itemLabel="Efterrätt"/>
+                                <f:selectItem itemValue="D" itemLabel="Dryck"/>
+                            </h:selectOneMenu>
+                            <h:commandButton action="#{menuInfo.insert()}" actionListener="Succeed" update="message" type="submit" value="Submit" />
+                            <h:outputText value="" />
+                        </h:form>
+                </div>
+        </div>
+        <div class="card1-edit">
+                <p class="lacarteedit-tittle">La Carte Meny Delete</p>
+                <h:form>
+                    <label for="item_id">Item id:</label>
+                    <h:inputText type="Integer" id="item_id" name="item_id" value="#{menuInfo.id}" required="true"/>
+                    <h:commandButton action="#{menuInfo.delete()}" actionListener="Succeed" update="message" type="submit" value="Delete" />
+                </h:form>
+        </div>
+
+    </h:panelGroup>
 </h:body>
 </html>

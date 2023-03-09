@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core" >
 <h:head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,38 +43,44 @@
 
 
     <div class="card-edit">
-        <ui:repeat value="#{lunchInfo.allByDate}" var="lunch">
-            <li class="menu-course">
-            <h:outputText value="#{lunch.date}">
-                <f:convertDateTime pattern="EEE, yyyy-MM-dd : "/>
-            </h:outputText>  #{lunch.name}
-            <span class="menu-price">#{lunch.price} kr</span>
-        </li>
 
-        </ui:repeat>
-
+            <p class="lunchedit-tittle">Veckan Lunch Meny</p>
+            <ui:repeat value="#{lunchInfo.allByDate}" var="lunch">
+                <li class="menu-course">
+                    <h:outputText value="#{lunch.date}">
+                        <f:convertDateTime pattern="EEE, yyyy-MM-dd : "/>
+                    </h:outputText>  #{lunch.name}
+                    <span class="menu-price">#{lunch.price} kr</span>
+                </li>
+            </ui:repeat>
 
     </div>
 
     <div class="card-edit">
-        <h:dataTable value="#{lunchInfo.allByDate}" var="lunch">
+        <p class="lunchedit-tittle">Veckan Lunch Meny</p>
+        <h:dataTable class="menu-course" value="#{lunchInfo.allByDate}" var="lunch">
             <h:column>
-                <f:facet name="header">ID</f:facet>
+                <f:facet  class="menu-course" name="header">ID</f:facet>
                 #{lunch.id}
             </h:column>
             <h:column>
-                <f:facet name="header">Name</f:facet>
+                <f:facet class="menu-course" name="header">Name</f:facet>
                 #{lunch.name}
             </h:column>
             <h:column>
-                <f:facet name="header">Date</f:facet>
-                <h:outputText value="#{lunch.date}">
+                <f:facet class="menu-course" name="header">Date</f:facet>
+                <h:outputText class="menu-course" value="#{lunch.date}">
                     <f:convertDateTime pattern="EEE, yyyy-MM-dd"/>
                 </h:outputText>
             </h:column>
         </h:dataTable>
-
+        <p class="menu-course">Delete Item</p>
+        <label for="item_id">Item id:</label>
+        <h:inputText type="Integer" id="item_id" name="item_id" value="#{lunchInfo.id}" required="true"/>
+        <h:commandButton action="#{lunchInfo.delete()}" actionListener="Succeed"  id= "my-button" type="submit" value="delete" />
+        <h:outputText value="" />
     </div>
+
 
 
 
