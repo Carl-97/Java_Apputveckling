@@ -35,7 +35,8 @@
 
                 </h:inputText>
 
-                <h:commandButton action="#{lunchInfo.insert()}" actionListener="Succeed" update="message" type="submit" value="Submit" />
+                <h:commandButton action="#{lunchInfo.insert()}" actionListener="Succeed" update="message" type="submit" value="Submit" styleClass="submit-button"/>
+
                 <h:outputText value="" />
             </h:form>
         </div>
@@ -74,10 +75,12 @@
                 </h:outputText>
             </h:column>
         </h:dataTable>
-        <p class="menu-course">Delete Item</p>
-        <label for="item_id">Item id:</label>
+        <p class="menu-course">Delete Item by ID</p>
+        <label for="item_id"> </label>
         <h:inputText type="Integer" id="item_id" name="item_id" value="#{lunchInfo.id}" required="true"/>
-        <h:commandButton action="#{lunchInfo.delete()}" actionListener="Succeed"  id= "my-button" type="submit" value="delete" />
+        <h:commandButton action="#{lunchInfo.delete()}" actionListener="Succeed" update = "message" type="submit" value="delete" styleClass="delete-button"/>
+
+
         <h:outputText value="" />
     </div>
 
@@ -90,9 +93,7 @@
 
 
 
-<ui:repeat value="#{lunchInfo.allByDate}" var="lunch">
-    id:#{lunch.id} name:#{lunch.name} date:#{lunch.date}<br/>
-</ui:repeat>
+
 
 
 

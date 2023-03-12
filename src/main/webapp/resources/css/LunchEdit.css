@@ -1,5 +1,4 @@
-
-body{
+body {
     margin: 0;
     padding: 0;
     background-image: linear-gradient(to bottom, #f3f3f3,#f4f4f4);
@@ -7,9 +6,7 @@ body{
     overflow-x: hidden;
 }
 
-
-
-.wrapper-edit{
+.wrapper-edit {
     margin: auto;
     display: flex;
     justify-content: center;
@@ -18,26 +15,23 @@ body{
     padding: 20px 20px;
     height: 550px;
     width: 100%;
-
 }
 
-
-.card-edit{
+.card-edit {
     display: block;
-
     height: 500px;
     overflow: hidden;
     background-color: #fcfcf8;
-    box-shadow: 5px 8px 10px hsla(0,0%,0%,0.16);
+    box-shadow: 5px 8px 10px hsla(0, 0%, 0%, 0.16);
     padding: 0px 140px 10px 50px;
     margin-left: 20px;
     grid-auto-flow: dense;
     border-radius: 10px;
     text-align: center;
-
+    position: relative;
 }
 
-.lunchedit-tittle{
+.lunchedit-tittle {
     text-align: center;
     font-weight: 510;
     font-style: normal;
@@ -46,14 +40,7 @@ body{
     font-size: 30px;
 }
 
-
-
-
-
-
-
 form {
-
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -61,14 +48,15 @@ form {
     display: grid;
     grid-template-columns: 1fr 2fr;
     position: relative;
-
 }
+
 .form-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 65%;
 }
+
 label {
     display: flex;
     justify-content: flex-end;
@@ -76,17 +64,19 @@ label {
     padding-right: 10px;
     font-weight: normal;
 }
+
 input {
     padding: 5px;
     font-size: 16px;
 }
-input[type="submit"] {
+
+input[type="submit"].submit-button {
     position: absolute;
-    right: 0px;
-    bottom: -50px;
+    right: -150px;
+    bottom: -35px;
+    margin: auto;
+    left: 0;
 }
-
-
 
 .empty-option {
     background-color: white;
@@ -96,21 +86,29 @@ input[type="submit"] {
     font-size: 16px;
 }
 
-.menu-course{
-
+.menu-course {
     text-align: start;
     font-weight: 250;
     font-style: inherit;
     margin-left: 20px;
     font-size: 18px;
     margin-bottom: 1em;
-
 }
+
 .menu-price {
     float: right;
     font-weight: inherit;
     margin-right: 15px;
 }
+
+.delete-button {
+    position: absolute;
+    right: -45px;
+    bottom: 45px;
+    margin: auto;
+    left: 0;
+}
+
 #my-button {
     position: absolute !important;
     right: 100px !important;

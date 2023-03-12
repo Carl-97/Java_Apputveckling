@@ -46,7 +46,7 @@
                                 <f:selectItem itemValue="E" itemLabel="Efterrätt"/>
                                 <f:selectItem itemValue="D" itemLabel="Dryck"/>
                             </h:selectOneMenu>
-                            <h:commandButton action="#{menuInfo.insert()}" actionListener="Succeed" update="message" type="submit" value="Submit" />
+                            <h:commandButton action="#{menuInfo.insert()}" actionListener="Succeed" update="message" type="submit" value="Submit" styleClass="submit-button"/>
                             <h:outputText value="" />
                         </h:form>
                 </div>
@@ -56,7 +56,7 @@
                 <h:form>
                     <label for="item_id">Item id:</label>
                     <h:inputText type="Integer" id="item_id" name="item_id" value="#{menuInfo.id}" required="true"/>
-                    <h:commandButton action="#{menuInfo.delete()}" actionListener="Succeed" update="message" type="submit" value="Delete" />
+                    <h:commandButton action="#{menuInfo.delete()}" actionListener="Succeed" update = "message" type="submit" value="delete" styleClass="delete-button"/>
                 </h:form>
         </div>
 
