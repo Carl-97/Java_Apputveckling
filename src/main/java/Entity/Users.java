@@ -2,14 +2,15 @@ package Entity;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-public class User {
+public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "ID")
-    private int id;
+    @Column(name = "USER_ID")
+    private int userId;
     @Basic
     @Column(name = "USERNAME")
     private String username;
@@ -17,23 +18,15 @@ public class User {
     @Column(name = "PASSWORD")
     private String password;
     @Basic
-    @Column(name = "ADMIN", columnDefinition = "false")
+    @Column(name = "ADMIN")
     private Boolean admin;
 
-    public User() {}
-
-    public User(String username, String password, Boolean admin) {
-        this.username = username;
-        this.password = password;
-        this.admin = admin;
+    public int getUserId() {
+        return userId;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getUsername() {
@@ -64,12 +57,12 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return id == user.id && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(admin, user.admin);
+        Users users = (Users) o;
+        return userId == users.userId && Objects.equals(username, users.username) && Objects.equals(password, users.password) && Objects.equals(admin, users.admin);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, password, admin);
+        return Objects.hash(userId, username, password, admin);
     }
 }
