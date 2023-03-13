@@ -43,45 +43,48 @@
     </div>
 
 
-    <div class="card-edit">
+    <div class="card1-edit">
+        <p class="lunchedit-tittle">Veckan Lunch Meny</p>
 
-            <p class="lunchedit-tittle">Veckan Lunch Meny</p>
-            <ui:repeat value="#{lunchInfo.allByDate}" var="lunch">
-                <li class="menu-course">
-                    <h:outputText value="#{lunch.date}">
-                        <f:convertDateTime pattern="EEE, yyyy-MM-dd : "/>
-                    </h:outputText>  #{lunch.name}
-                    <span class="menu-price">#{lunch.price} kr</span>
-                </li>
-            </ui:repeat>
+
+            <ui:repeat value="#{lunchInfo.allByDate}" var="lunch"><h:form style="display:block">
+             <li class="menu-course">
+                 <h:outputText value="#{lunch.date}">
+                       <f:convertDateTime pattern="EEE, yyyy-MM-dd : "/>
+                </h:outputText>  #{lunch.name}
+
+            </li>
+            </h:form>
+        </ui:repeat>
 
     </div>
 
+
     <div class="card-edit">
-        <p class="lunchedit-tittle">Veckan Lunch Meny</p>
-        <h:dataTable class="menu-course" value="#{lunchInfo.allByDate}" var="lunch">
-            <h:column>
-                <f:facet  class="menu-course" name="header">ID</f:facet>
-                #{lunch.id}
-            </h:column>
-            <h:column>
-                <f:facet class="menu-course" name="header">Name</f:facet>
-                #{lunch.name}
-            </h:column>
-            <h:column>
-                <f:facet class="menu-course" name="header">Date</f:facet>
-                <h:outputText class="menu-course" value="#{lunch.date}">
-                    <f:convertDateTime pattern="EEE, yyyy-MM-dd"/>
-                </h:outputText>
-            </h:column>
-        </h:dataTable>
-        <p class="menu-course">Delete Item by ID</p>
-        <label for="item_id"> </label>
-        <h:inputText type="Integer" id="item_id" name="item_id" value="#{lunchInfo.id}" required="true"/>
-        <h:commandButton action="#{lunchInfo.delete()}" actionListener="Succeed" update = "message" type="submit" value="delete" styleClass="delete-button"/>
 
+        <p class="lunchedit-tittle">Delete By Item ID </p>
+        <h:form style="display: block">
+            <h:dataTable class="menu-course" value="#{lunchInfo.allByDate}" var="lunch">
+                <h:column>
+                    <f:facet  class="menu-course" name="header">ID</f:facet>
+                    #{lunch.id}
+                </h:column>
+                <h:column>
+                    <f:facet class="menu-course" name="header">Name</f:facet>
+                    #{lunch.name}
+                </h:column>
+                <h:column>
+                    <f:facet class="menu-course" name="header">Date</f:facet>
+                    <h:outputText class="menu-course" value="#{lunch.date}">
+                        <f:convertDateTime pattern="EEE"/>
+                    </h:outputText>
+                </h:column>
+            </h:dataTable>
+            <label for="item_id" style="margin-bottom: 60px;"> <br> </br></label>
+            <h:inputText type="Integer" id="item_id" name="item_id" value="#{lunchInfo.id}" required="true"/>
+            <h:commandButton action="#{lunchInfo.delete()}" actionListener="Succeed" update = "message" type="submit" value="delete" styleClass="delete-button"/>
 
-        <h:outputText value="" />
+        </h:form >
     </div>
 
 

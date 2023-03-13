@@ -30,6 +30,22 @@ body {
     text-align: center;
     position: relative;
 }
+.card1-edit {
+    display: block;
+    height: auto;
+    min-height: 500px;
+    overflow: auto;
+    background-color: #fcfcf8;
+    box-shadow: 5px 8px 10px hsla(0, 0%, 0%, 0.16);
+    padding: 0px 140px 10px 50px;
+    margin-left: 20px;
+    grid-auto-flow: dense;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+
+}
+
 
 .lunchedit-tittle {
     text-align: center;
@@ -50,6 +66,8 @@ form {
     position: relative;
 }
 
+
+
 .form-wrapper {
     display: flex;
     justify-content: center;
@@ -63,6 +81,8 @@ label {
     align-items: center;
     padding-right: 10px;
     font-weight: normal;
+    margin-bottom: 20px;
+
 }
 
 input {
@@ -92,7 +112,7 @@ input[type="submit"].submit-button {
     font-style: inherit;
     margin-left: 20px;
     font-size: 18px;
-    margin-bottom: 1em;
+
 }
 
 .menu-price {
@@ -103,14 +123,10 @@ input[type="submit"].submit-button {
 
 .delete-button {
     position: absolute;
-    right: -45px;
-    bottom: 45px;
+    right: -180px;
+    bottom: 175px;
     margin: auto;
     left: 0;
 }
 
-#my-button {
-    position: absolute !important;
-    right: 100px !important;
-    bottom: 225px !important;
-}
+
