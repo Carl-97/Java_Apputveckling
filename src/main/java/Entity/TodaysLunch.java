@@ -9,7 +9,7 @@ import java.util.Objects;
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name="getTodayLunch",
+        @NamedQuery(name="Lunch.today",
                 query = "SELECT e FROM TodaysLunch e WHERE e.date = CURRENT_DATE"),
         @NamedQuery(name = "Lunch.all", query = "SELECT e FROM TodaysLunch e"),
         @NamedQuery(name = "Lunch.allOrderByDate", query = "SELECT e FROM TodaysLunch e ORDER BY e.date ASC")

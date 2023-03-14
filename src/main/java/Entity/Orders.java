@@ -1,5 +1,6 @@
 package Entity;
 
+import RestAPI.Request.CreateOrderRequest;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -8,7 +9,7 @@ import java.util.Objects;
 @NamedQueries({
         @NamedQuery(name = "Orders.all", query = "SELECT e FROM Orders e"),
         @NamedQuery(name = "Orders.byTableID", query = "SELECT e FROM Orders e WHERE e.dinnertableByTableFk.id = ?1"),
-        @NamedQuery(name = "Orders.ToKitchen", query = "select e.itemsByItemFk.name, e.note from Orders e where e.itemsByItemFk.itemcategory not like 'D'")
+        @NamedQuery(name = "Orders.ToKitchen", query = "select e.itemsByItemFk.name, e.note from Orders e where e.itemsByItemFk.itemCategory not like 'D'")
 })
 public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,17 +17,11 @@ public class Orders {
     @Column(name = "ORDERS_ID")
     private int id;
     @Basic
-    @Column(name = "PRICE")
-    private Double price;
-    @Basic
-    @Column(name = "QUANTITY")
-    private Integer quantity;
-    @Basic
     @Column(name = "NOTE")
     private String note;
     @Basic
     @Column(name = "READY",columnDefinition = "boolean default false")
-    private Boolean readyCheck;
+    private Boolean ready;
 
     @ManyToOne
     @JoinColumn(name = "ITEM_FK", referencedColumnName = "ITEM_ID")
@@ -37,9 +32,13 @@ public class Orders {
 
     public Orders() {}
 
-    public Orders(Double price, Integer quantity, String note, Items itemsByItemFk, Dinnertable dinnertableByTableFk) {
-        this.price = price;
-        this.quantity = quantity;
+    public Orders(CreateOrderRequest orderRequest) {
+        this.note = note;
+        this.itemsByItemFk = orderRequest.getItemsByItemFk();
+        this.dinnertableByTableFk = orderRequest.getDinnertableByTableFk();
+    }
+
+    public Orders(String note, Items itemsByItemFk, Dinnertable dinnertableByTableFk) {
         this.note = note;
         this.itemsByItemFk = itemsByItemFk;
         this.dinnertableByTableFk = dinnertableByTableFk;
@@ -53,22 +52,6 @@ public class Orders {
         this.id = ordersId;
     }
 
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
     public String getNote() {
         return note;
     }
@@ -77,12 +60,12 @@ public class Orders {
         this.note = note;
     }
 
-    public Boolean getReadyCheck() {
-        return readyCheck;
+    public Boolean getReady() {
+        return ready;
     }
 
-    public void setReadyCheck(Boolean readyCheck) {
-        this.readyCheck = readyCheck;
+    public void setReady(Boolean readyCheck) {
+        this.ready = readyCheck;
     }
 
     @Override
@@ -90,12 +73,12 @@ public class Orders {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Orders orders = (Orders) o;
-        return id == orders.id && Objects.equals(price, orders.price) && Objects.equals(quantity, orders.quantity);
+        return id == orders.id && Objects.equals(note, orders.note) && ready.equals(orders.ready) && itemsByItemFk.equals(orders.itemsByItemFk) && dinnertableByTableFk.equals(orders.dinnertableByTableFk);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, price, quantity);
+        return Objects.hash(id, note, ready, itemsByItemFk, dinnertableByTableFk);
     }
 
     public Items getItemsByItemFk() {
@@ -118,8 +101,6 @@ public class Orders {
     public String toString() {
         return "Orders{" +
                 "ordersId=" + id +
-                ", price=" + price +
-                ", quantity=" + quantity +
                 ", note='" + note + '\'' +
                 ", itemsByItemFk=" + itemsByItemFk +
                 ", dinnertableByTableFk=" + dinnertableByTableFk +

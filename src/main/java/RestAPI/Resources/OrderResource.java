@@ -1,6 +1,5 @@
 package RestAPI.Resources;
 
-import Entity.Items;
 import Entity.Orders;
 import RestAPI.Request.CreateOrderRequest;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -49,7 +48,7 @@ public class OrderResource {
         if(order == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-        order.setCooked(true);
+        order.setReady(true);
         return Response.ok(order).build();
     }
 
