@@ -23,7 +23,7 @@
         <h1 class="headerTitle"> A La Carte</h1>
     </h:panelGroup>
 
-
+    <div class="card-edit">
     <div class="dinnerList">
         <h2>Förrätter</h2>
         <ui:repeat value="#{menuInfo.getItemByCategory('F')}" var="value">
@@ -59,6 +59,7 @@
                 <span class="menu-price">#{value.price}</span>
             </li>
         </ui:repeat>
+    </div>
     </div>
 </h:body>
 </html>
