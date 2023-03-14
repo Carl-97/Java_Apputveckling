@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom, #f3f3f3,#f4f4f4);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.wrapper-edit {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D3D3D3;
+    padding: 20px 20px;
+    height: 550px;
+    width: 100%;
+}
+
+.card-edit {
+    display: block;
+    height: 500px;
+    overflow: hidden;
+    background-color: #fcfcf8;
+    box-shadow: 5px 8px 10px hsla(0, 0%, 0%, 0.16);
+    padding: 0px 140px 10px 50px;
+    margin-left: 20px;
+    grid-auto-flow: dense;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+.card1-edit {
+    display: block;
+    height: auto;
+    min-height: 500px;
+    overflow: auto;
+    background-color: #fcfcf8;
+    box-shadow: 5px 8px 10px hsla(0, 0%, 0%, 0.16);
+    padding: 0px 140px 10px 50px;
+    margin-left: 20px;
+    grid-auto-flow: dense;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+
+}
+
+
+.lunchedit-tittle {
+    text-align: center;
+    font-weight: 510;
+    font-style: normal;
+    font-family: Imprint MT Shadow, serif;
+    padding-top: 10px;
+    font-size: 30px;
+}
+
+form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    position: relative;
+}
+
+
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+}
+
+label {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+    font-weight: normal;
+    margin-bottom: 20px;
+
+}
+
+input {
+    padding: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"].submit-button {
+    position: absolute;
+    right: -150px;
+    bottom: -35px;
+    margin: auto;
+    left: 0;
+}
+
+.empty-option {
+    background-color: white;
+    color: black;
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.menu-course {
+    text-align: start;
+    font-weight: 250;
+    font-style: inherit;
+    margin-left: 20px;
+    font-size: 18px;
+
+}
+
+.menu-price {
+    float: right;
+    font-weight: inherit;
+    margin-right: 15px;
+}
+
+.delete-button {
+    position: absolute;
+    right: -180px;
+    bottom: 175px;
+    margin: auto;
+    left: 0;
+}
+
+

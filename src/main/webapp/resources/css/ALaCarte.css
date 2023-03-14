@@ -1,0 +1,75 @@
+* {
+    font-family: Imprint MT Shadow, serif;
+}
+
+.menu-course{
+    text-align: justify;
+    font-weight: 250;
+    margin-left: 20px;
+    font-size: 18px;
+    margin-bottom: 1em;
+}
+.menu-price {
+    float: right;
+    font-weight: inherit;
+    margin-right: 15px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom, #f3f3f3,#f4f4f4);
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.dinnerTable {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 10px;
+    display: block;
+    padding-bottom: 10px;
+    box-shadow: 5px 8px 10px hsla(0,0%,0%, 0.08);
+    text-align: center;
+}
+
+.header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 10px;
+    display: block;
+    padding-bottom: 10px;
+    box-shadow: 5px 8px 10px hsla(0,0%,0%, 0.08);
+    text-align: center;
+}
+
+ul {
+    display: grid;
+    grid-auto-columns: 4fr 1fr;
+}
+
+span {
+    margin-top: 16px
+}
+
+
+.headerTitle{
+    margin: 0;
+    padding: 0;
+}
+.card-edit {
+    display: block;
+    height: auto;
+    min-height: 500px;
+    overflow: auto;
+    background-color: #fcfcf8;
+    box-shadow: 5px 8px 10px hsla(0,0%,0%,0.16);
+    padding: 0px 140px 10px 50px;
+    margin-left: 20px;
+    grid-auto-flow: dense;
+    border-radius: 10px;
+    text-align: center;
+}

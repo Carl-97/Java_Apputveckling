@@ -1,0 +1,306 @@
+
+
+body{
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to bottom, #f3f3f3,#f4f4f4);
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
+.header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 10px;
+  display: block;
+  padding-bottom: 10px;
+  box-shadow: 5px 8px 10px hsla(0,0%,0%, 0.08);
+  text-align: center;
+}
+
+.headerimg {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+
+.table-booking{
+  text-align: right;
+  position: absolute;
+  font-size: 18px;
+  top: 1px;
+  right: 5px
+}
+.wrapper{
+
+  background-color: #D3D3D3;
+  padding: 20px 20px;
+  height: 550px;
+  width: 100%;
+
+}
+.menu-container{
+  display: grid;
+  height: 500px;
+  width: 100%;
+
+
+  grid-template-columns: 650px auto 20px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+
+
+  margin: 0px auto;
+
+}
+.menu-card{
+  background-color: #fcfcf8;
+  box-shadow: 5px 8px 10px hsla(0,0%,0%,0.16);
+  padding: 15px 0 ;
+  margin: 30px 20px 0 0px;
+  height: 500px;
+  border-radius: 10px;
+}
+
+.menu-tittle{
+  text-align: center;
+  font-weight: 500;
+  font-style: normal;
+  font-family: Imprint MT Shadow, serif;
+  padding-top: 25px;
+  font-size: 25px;
+
+}
+.menu-week{
+  text-align: center;
+  font-weight: 400;
+  margin-left: 10px;
+  font-style: italic;
+  font-family: serif;
+  font-size: 18px;
+
+}
+.menu-day{
+  text-align: start;
+  font-weight: 550;
+  margin-left: 20px;
+  font-style: italic;
+  font-family: serif;
+  font-size: 20px;
+  margin-bottom: 1em;
+}
+.menu-items{
+  margin-bottom: 1em;
+}
+
+.menu-course{
+
+  text-align: start;
+  font-weight: 250;
+  font-style: inherit;
+  margin-left: 20px;
+  font-size: 18px;
+  margin-bottom: 1em;
+
+}
+div:empty {
+  outline: 2px ;
+  height: 1em;
+}
+.menu-price {
+  float: right;
+  font-weight: inherit;
+  margin-right: 15px;
+}
+
+.week-menu{
+  float: right;
+  margin-right: 15px;
+  font-weight: inherit;
+  font-style: italic;
+  font-size: 18px;
+  }
+.card-image{
+  margin: auto 0;
+  height: 500px;
+  margin-right: -20px;
+  padding: 0 5px;
+  grid-template-columns: 700px auto;
+
+  box-shadow: 5px 8px 10px hsla(0,0%,0%,0.01);
+  border-radius: 10px;
+
+}
+.wrapper1{
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D3D3D3;
+  padding: 20px 20px;
+  height: 550px;
+  width: 100%;
+
+}
+.event-container {
+  display: grid;
+  grid-template-columns: 100% 600px auto 20px;
+  height: 500px;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding: 0 20px 20px 20px;
+  grid-auto-flow: dense;
+  width: 100%;
+
+}
+
+.event-card{
+  background-color: #fcfcf8;
+  box-shadow: 5px 8px 10px hsla(0,0%,0%,0.16);
+  padding: 15px 0 ;
+  margin: 30px 20px 0 20px;
+  height: 500px;
+  border-radius: 10px;
+
+}
+
+.event-tittle{
+  text-align: center;
+  font-weight: 510;
+  font-style: normal;
+  font-family: Imprint MT Shadow, serif;
+  padding-top: 25px;
+  font-size: 25px;
+}
+
+
+
+.event-date{
+  text-align: center;
+  font-weight: 400;
+  margin-left: 10px;
+  font-style: italic;
+  font-family: serif;
+  font-size: 18px;
+}
+
+.event-time{
+  text-align: center;
+  font-weight: 400;
+  margin-left: 10px;
+  font-style: italic;
+  font-family: serif;
+  font-size: 18px;
+}
+
+.event-describing{
+  text-align: start;
+  font-weight: 250;
+  font-style: inherit;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.event-info{
+  text-align: start;
+  font-weight: 250;
+  font-style: inherit;
+  margin-left: 20px;
+  font-size: 18px;
+}
+.other-event{
+  text-align: center;
+  font-weight: inherit;
+  font-style: italic;
+}
+
+.event-image{
+
+
+  height: 500px;
+  margin-left: 20px;
+  margin-right: -30px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  grid-template-columns: auto 700px;
+
+  box-shadow: 5px 8px 10px hsla(0,0%,0%,0.01);
+  border-radius: 25px;
+}
+
+.lacarte-image{
+  margin-top: 20px;
+
+}
+
+.lacarte-menu{
+  text-align: center;
+  font-weight: 500;
+  font-style: normal;
+  font-family: Imprint MT Shadow, serif;
+  padding-top: 10px;
+  font-size: 45px;
+}
+
+.wrapper2{
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D3D3D3;
+  padding: 20px 20px;
+  height: 250px;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0 auto;
+
+}
+
+
+
+.contact-info{
+  width: 100%;
+  text-align: left;
+  font-weight: 250;
+  font-style: inherit;
+  margin-left: 20px;
+  font-size: 18px;
+}
+.address {
+  width: 100%;
+  text-align: center;
+  font-weight: 250;
+  font-style: inherit;
+  margin-left: 20px;
+  font-size: 18px;
+}
+.hours {
+  width: 100%;
+  text-align: right;
+  font-weight: 250;
+  font-style: inherit;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.footer-container > * {
+  margin: 3em;
+}
+
+
+
+
+
+

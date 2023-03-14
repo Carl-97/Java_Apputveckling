@@ -5,11 +5,13 @@ import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 
 @Named
 @RequestScoped
+@Transactional(Transactional.TxType.REQUIRED)
 public class OrderInfo {
 
     @PersistenceContext(name = "default")

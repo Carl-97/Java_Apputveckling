@@ -1,6 +1,7 @@
 package Entity;
 
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 
 import java.sql.Date;
 import java.util.Objects;
@@ -14,7 +15,7 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "EVENT_ID")
-    private int eventId;
+    private int id;
     @Basic
     @Column(name = "DESCRIPTION")
     private String description;
@@ -25,12 +26,20 @@ public class Event {
     @Column(name = "NAME")
     private String name;
 
-    public int getEventId() {
-        return eventId;
+    public Event() {}
+
+    public Event(String description, Date date, String name) {
+        this.description = description;
+        this.date = date;
+        this.name = name;
     }
 
-    public void setEventId(int eventId) {
-        this.eventId = eventId;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int eventId) {
+        this.id = eventId;
     }
 
     public String getDescription() {
@@ -62,11 +71,11 @@ public class Event {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Event event = (Event) o;
-        return eventId == event.eventId && Objects.equals(description, event.description) && Objects.equals(date, event.date) && Objects.equals(name, event.name);
+        return id == event.id && Objects.equals(description, event.description) && Objects.equals(date, event.date) && Objects.equals(name, event.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eventId, description, date, name);
+        return Objects.hash(id, description, date, name);
     }
 }
