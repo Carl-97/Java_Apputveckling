@@ -18,14 +18,8 @@ public class Orders {
     @Column(name = "ORDERS_ID")
     private int ordersId;
     @Basic
-    @Column(name = "PRICE")
-    private Double price;
-    @Basic
-    @Column(name = "QUANTITY")
-    private Integer quantity;
-    @Basic
     @Column
-    private String note = "";
+    private String note;
     @Basic
     @Column
     private boolean cooked = false;
@@ -39,9 +33,7 @@ public class Orders {
 
     public Orders() {}
 
-    public Orders(Double price, Integer quantity, String note, Items itemsByItemFk, Dinnertable dinnertableByTableFk) {
-        this.price = price;
-        this.quantity = quantity;
+    public Orders(String note, Items itemsByItemFk, Dinnertable dinnertableByTableFk) {
         this.note = note;
         this.itemsByItemFk = itemsByItemFk;
         this.dinnertableByTableFk = dinnertableByTableFk;
@@ -59,22 +51,6 @@ public class Orders {
 
     public void setOrdersId(int ordersId) {
         this.ordersId = ordersId;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
     }
 
     public String getNote() {
@@ -98,12 +74,12 @@ public class Orders {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Orders orders = (Orders) o;
-        return ordersId == orders.ordersId && Objects.equals(price, orders.price) && Objects.equals(quantity, orders.quantity);
+        return ordersId == orders.ordersId && Objects.equals(note, orders.note);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ordersId, price, quantity);
+        return Objects.hash(ordersId, note);
     }
 
     public Items getItemsByItemFk() {
@@ -126,8 +102,6 @@ public class Orders {
     public String toString() {
         return "Orders{" +
                 "ordersId=" + ordersId +
-                ", price=" + price +
-                ", quantity=" + quantity +
                 ", note='" + note + '\'' +
                 ", itemsByItemFk=" + itemsByItemFk +
                 ", dinnertableByTableFk=" + dinnertableByTableFk +
