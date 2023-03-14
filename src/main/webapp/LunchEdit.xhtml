@@ -82,7 +82,7 @@
             </h:dataTable>
             <label for="item_id" style="margin-bottom: 60px;"> <br> </br></label>
             <h:inputText type="Integer" id="item_id" name="item_id" value="#{lunchInfo.id}" required="true"/>
-            <h:commandButton action="#{lunchInfo.delete()}" actionListener="Succeed" update = "message" type="submit" value="delete" styleClass="delete-button"/>
+            <h:commandButton style="margin-bottom:60px"  action="#{lunchInfo.delete()}" actionListener="Succeed" update = "message" type="submit" value="delete" styleClass="delete-button"/>
 
         </h:form >
     </div>

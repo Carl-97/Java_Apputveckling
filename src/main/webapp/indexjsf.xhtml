@@ -29,14 +29,14 @@
                   <p class ="header-open-hours-lunch">Man-Fre: 11:00 - 14:00</p>
                </div>
                <ul class="menu-items" >
-                  <h:panelGroup styleClass="menu-day" style="margin-bottom: 1em">#{lunchInfo.currentDate}:</h:panelGroup>
-                  <ui:repeat value="#{lunchInfo.todaysLunch}" var="lunch">
-                     <li  Class="menu-course" > #{lunch.name}
+                  <h:panelGroup styleClass="menu-day" style="margin-bottom: 2em ">#{lunchInfo.currentDate}:</h:panelGroup>
+                  <ui:repeat value="#{lunchInfo.todaysLunch}" var="lunch" >
+                     <li  Class="menu-course" > #{lunch.name} #{lunch.desc}
                         <span class="menu-price">#{lunch.price} kr</span>
                      </li>
                   </ui:repeat>
                </ul>
-               <a href="weekMenu.xhtml" class="week-menu">Se hela veckans meny... </a>
+               <a href="weekMenu.xhtml" class="week-menu" style="margin-top: 1em">Se hela veckans meny... </a>
             </h:panelGroup>
             <h:graphicImage name="images/lunch.jpg" styleClass="card-image" id="lunch-image" alt="" />
          </h:panelGroup>
