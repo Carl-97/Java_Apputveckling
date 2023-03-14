@@ -20,8 +20,9 @@
             <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver"/>
             <property name="hibernate.connection.username" value="APP"/>
             <property name="hibernate.connection.password" value="APP"/>
+            <!-- change schema generation value to none -->
             <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
-            <!-- Insert  in DB-->
+            <!-- Insert  in DB comment out property below to not insert anymore-->
             <property name="jakarta.persistence.sql-load-script-source" value="META-INF/sql/data.sql"/>
 
             <property name="hibernate.show_sql" value="true"/>
