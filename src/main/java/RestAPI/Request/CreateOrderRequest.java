@@ -5,8 +5,6 @@ import Entity.Items;
 
 public class CreateOrderRequest {
 
-    private Double price;
-    private Integer quantity;
     private String note;
     private Items itemsByItemFk;
     private Dinnertable dinnertableByTableFk;
@@ -16,22 +14,6 @@ public class CreateOrderRequest {
         this.note = note;
         this.itemsByItemFk = itemsByItemFk;
         this.dinnertableByTableFk = dinnertableByTableFk;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
     }
 
     public String getNote() {

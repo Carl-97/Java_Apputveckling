@@ -13,7 +13,6 @@ import java.util.List;
 @RequestScoped
 @Transactional(Transactional.TxType.REQUIRED)
 public class MenuInfo {
-
     private String description;
     private String itemCategory;
     private String name;
@@ -77,7 +76,7 @@ public class MenuInfo {
     public void update() {
         Items item = em.find(Items.class, id);
         item.setDescription(description);
-        item.setItemcategory(itemCategory);
+        item.setItemCategory(itemCategory);
         item.setName(name);
         item.setPrice(price);
     }
@@ -87,6 +86,6 @@ public class MenuInfo {
     }
 
     public List<Items> getItemByCategory(String category) {
-        return em.createNamedQuery("Items.category", Items.class).setParameter("itemcategory", category).getResultList();
+        return em.createNamedQuery("Items.category", Items.class).setParameter("itemCategory", category).getResultList();
     }
 }
