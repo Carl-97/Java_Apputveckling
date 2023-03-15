@@ -6,99 +6,45 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
+
 <h:head>
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Antons Skafferi</title>
+   <title>Antons Skafferi Admin</title>
+   <h:outputStylesheet library="css" name="Adminindex.css" />
 </h:head>
 
 <h:body>
-   <h:outputStylesheet library="css" name="index.css" />
-   <h:form>
-      <h:panelGroup layout="block" styleClass="header">
-         <a href="reservation.xhtml" class="table-booking">Boka Bord</a>
-         <h:graphicImage name="images/AntonsSkafferi.svg" alt="Antons Skafferi logo" styleClass="headerimg"/>
-      </h:panelGroup>
 
-      <h:panelGroup layout="block" styleClass="wrapper">
-         <h:panelGroup layout="block" styleClass="menu-container">
-            <h:panelGroup layout="block" styleClass="menu-card">
-               <h1 class ="menu-tittle">Dagens Lunch</h1>
-               <div class ="menu-week">
-                  <p class ="week-number">Vecka #{lunchInfo.week}</p>
-                  <p class ="header-open-hours-lunch">Man-Fre: 11:00 - 14:00</p>
-               </div>
-               <ul class="menu-items" >
-                  <h:panelGroup styleClass="menu-day" style="margin-bottom: 2em ">#{lunchInfo.currentDate}:</h:panelGroup>
-                  <ui:repeat value="#{lunchInfo.todaysLunch}" var="lunch" >
-                     <li  Class="menu-course" > #{lunch.name} #{lunch.desc}
-                        <span class="menu-price">#{lunch.price} kr</span>
-                     </li>
-                  </ui:repeat>
-               </ul>
-               <a href="weekMenu.xhtml" class="week-menu" style="margin-top: 1em">Se hela veckans meny... </a>
-            </h:panelGroup>
-            <h:graphicImage name="images/lunch.jpg" styleClass="card-image" id="lunch-image" alt="" />
-         </h:panelGroup>
-
-      </h:panelGroup>
-
-   </h:form>
-
-   <h:panelGroup layout="block" styleClass="wrapper1">
-      <h:graphicImage name="images/event.jpg" styleClass="event-image" id="event-image" alt="" />
-      <h:panelGroup layout="block" styleClass="event-container">
-         <div class="event-card">
-            <h1 class="event-tittle">Evenemang</h1>
-            <div class="event-day">
-               <p class="event-date">Fredag 14 februari</p>
-               <p class="event-time">18:00</p>
-            </div>
-            <div class="event-describing">
-               <p class="event-info">Upplev en helkvall med god mat och
-                  show i bekvam miljo pa Antons Skafferi.</p>
-               <p class="event-info">Vi bjuds det pa musik ifran Anton och
-                  hans gang. Det spelas svenska folkvisor
-                  kanda som okanda. Kl 18 borjar
-                  musiken och avslutas vid 22.00. Passa
-                  pa att redan nu boka bord innan det blir
-                  fullt.</p>
-            </div>
-         </div>
-      </h:panelGroup>
+   <h:panelGroup layout="block" styleClass="header">
+      <h1 class="header-title">Admin</h1>
+      <h:graphicImage name="images/AntonsSkafferi.svg" alt="Antons Skafferi logo" styleClass="headerimg"/>
    </h:panelGroup>
 
    <h:panelGroup layout="block" styleClass="wrapper1">
-      <h:panelGrid>
-         <h:graphicImage name="images/lacarte.jpg" styleClass="lacarte-image" id="lacarte-image" alt="" />
-         <h:panelGroup layout="block" styleClass="lacarte-menu">
-            <a href="ALaCarte.xhtml">La Carte Meny </a>
-         </h:panelGroup>
-      </h:panelGrid>
-   </h:panelGroup>
+      <h:graphicImage name="images/admin.jpg" styleClass="admin-image" id="admin-image" alt="" />
+      <h:panelGroup layout="block" styleClass="admin-container">
+         <div class="admin-card">
+            <h1 class="admin-tittle">Admin</h1>
+            <ul class ="admin-items">
 
-   <h:panelGroup class="wrapper2">
+               <li class="list-items"><a href="LunchEdit.xhtml">Lunch Meny</a></li>
+               <li class="list-items"><a href="ALaCarteEdit.xhtml">A La Carte Meny</a></li>
+            </ul>
 
-      <h:panelGroup layout="block" styleClass="footer-container">
-         <div class="contact-info">
-            <h3>Kontakt</h3>
-            <p>Telefon: 010 34 34 34</p>
-            <p>Email: Antonsskafferi@gmail.com</p>
-         </div>
-         <div class="address">
-            <h3>Adress</h3>
-            <p>Storgatan 12</p>
-            <p>855 33 Sunsvall</p>
-         </div>
-         <div class="hours">
-            <h3>Oppettider</h3>
-            <p>Man-tors: 11:00 - 21:00</p>
-            <p>Fre-lor: 11:00 - 00:00</p>
-            <p>Son: Stangt</p>
+
+
          </div>
       </h:panelGroup>
-
    </h:panelGroup>
+
+
+
+
+
 
 </h:body>
+
+
+
 </html>
