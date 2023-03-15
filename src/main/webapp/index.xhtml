@@ -31,7 +31,7 @@
                <ul class="menu-items" >
                   <h:panelGroup styleClass="menu-day" style="margin-bottom: 1em">#{lunchInfo.currentDate}:</h:panelGroup>
                   <ui:repeat value="#{lunchInfo.todaysLunch}" var="lunch">
-                     <li  Class="menu-course" > #{lunch.name}
+                     <li  Class="menu-course" > #{lunch.name} #{lunch.desc}
                         <span class="menu-price">#{lunch.price} kr</span>
                      </li>
                   </ui:repeat>
