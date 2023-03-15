@@ -123,10 +123,8 @@ input[type="submit"].submit-button {
 
 .delete-button {
     position: absolute;
-    right: -180px;
-    bottom: -90px;
+    right: -300px;
+
     margin: auto;
     left: 0;
 }
-
-
