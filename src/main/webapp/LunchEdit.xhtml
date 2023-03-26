@@ -80,10 +80,11 @@
                     </h:outputText>
                 </h:column>
             </h:dataTable>
+            <div>
             <label for="item_id" style="margin-bottom: 60px;"> <br> </br></label>
             <h:inputText type="Integer" id="item_id" name="item_id" value="#{lunchInfo.id}" required="true"/>
             <h:commandButton style="margin-bottom:60px"  action="#{lunchInfo.delete()}" actionListener="Succeed" update = "message" type="submit" value="delete" styleClass="delete-button"/>
-
+            </div>
         </h:form >
     </div>
 
